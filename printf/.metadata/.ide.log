@@ -671,3 +671,330 @@
 
 2024-03-07 19:28:21,259 [INFO] Activator:177 - !SESSION log4j initialized
 2024-03-07 19:28:27,524 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2024-03-07 19:28:28,633 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037
+2024-03-07 19:28:28,660 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/mcu/
+2024-03-07 19:28:28,660 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/boardmanager/
+2024-03-07 19:28:28,660 [WARN] ApiDb:259 - Overriding images path with different value:  => C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/mcufinder/images/
+2024-03-07 19:28:28,668 [INFO] ApiDb:250 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:28,670 [INFO] DbMcusAds:125 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:28,674 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/cs/
+2024-03-07 19:28:28,817 [INFO] RulesReader:64 - Compatibility file has been processed (297 Rules)
+2024-03-07 19:28:28,916 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/mcu/
+2024-03-07 19:28:28,917 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/boardmanager/
+2024-03-07 19:28:28,917 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/mcufinder/images/
+2024-03-07 19:28:28,917 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:28,917 [INFO] ApiDb:250 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:28,917 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:28,918 [INFO] DbMcusAds:125 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:28,918 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:28,918 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:28,918 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/cs/
+2024-03-07 19:28:29,008 [INFO] MainPanel:264 - HeapMemory: 268435456
+2024-03-07 19:28:29,088 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/mcu/
+2024-03-07 19:28:29,088 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/boardmanager/
+2024-03-07 19:28:29,088 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\/plugins/mcufinder/images/
+2024-03-07 19:28:29,090 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:29,090 [INFO] ApiDb:250 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:29,090 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:29,090 [INFO] DbMcusAds:125 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/
+2024-03-07 19:28:29,090 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:29,090 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\trant\.stmcufinder\plugins\mcufinder/ => C:\Users\trant\.stmcufinder\plugins\mcufinder
+2024-03-07 19:28:29,090 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\trant\.stmcufinder\plugins\mcufinder//mcu/cs/
+2024-03-07 19:28:29,110 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037
+2024-03-07 19:28:29,111 [INFO] PluginManage:196 - Search for loadable plugins [exclusion list=, ]
+2024-03-07 19:28:29,113 [INFO] PluginManage:310 - Check plugin analytics
+2024-03-07 19:28:29,316 [INFO] AnalyticsPlugin:253 - Accepted Software Licenses: STM32CubeMX.6.9.0
+2024-03-07 19:28:29,316 [INFO] AnalyticsPlugin:255 - Accepted CMSIS Pack Licenses: 
+2024-03-07 19:28:29,316 [INFO] AnalyticsPlugin:257 - Accepted Firmware Licenses: FW.G0.1.6.0,FW.F4.1.28.0
+2024-03-07 19:28:29,320 [INFO] PluginManage:359 - Loaded plugin analytics (category:tool,tabindex:-1)
+2024-03-07 19:28:29,320 [INFO] PluginManage:310 - Check plugin cadmodel
+2024-03-07 19:28:29,324 [INFO] CADModel:105 - Init CAD model plugin
+2024-03-07 19:28:29,324 [INFO] PluginManage:359 - Loaded plugin cadmodel (category:power,tabindex:5)
+2024-03-07 19:28:29,324 [INFO] PluginManage:310 - Check plugin clock
+2024-03-07 19:28:29,332 [INFO] PluginManage:359 - Loaded plugin clock (category:base,tabindex:2)
+2024-03-07 19:28:29,333 [INFO] PluginManage:310 - Check plugin ddr
+2024-03-07 19:28:29,336 [INFO] PluginManage:359 - Loaded plugin ddr (category:tool,tabindex:6)
+2024-03-07 19:28:29,336 [INFO] PluginManage:310 - Check plugin filemanager
+2024-03-07 19:28:29,475 [INFO] PluginManage:359 - Loaded plugin filemanager (category:base,tabindex:10)
+2024-03-07 19:28:29,475 [INFO] PluginManage:310 - Check plugin ipmanager
+2024-03-07 19:28:29,483 [INFO] PluginManage:359 - Loaded plugin ipmanager (category:base,tabindex:5)
+2024-03-07 19:28:29,483 [INFO] PluginManage:310 - Check plugin lpbam
+2024-03-07 19:28:29,490 [INFO] PluginManage:359 - Loaded plugin lpbam (category:base,tabindex:0)
+2024-03-07 19:28:29,490 [INFO] PluginManage:310 - Check plugin memorymap
+2024-03-07 19:28:29,501 [INFO] PluginManage:359 - Loaded plugin memorymap (category:base,tabindex:4)
+2024-03-07 19:28:29,501 [INFO] PluginManage:310 - Check plugin pinoutandconfiguration
+2024-03-07 19:28:29,508 [INFO] PluginManage:359 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2024-03-07 19:28:29,508 [INFO] PluginManage:310 - Check plugin pinoutconfig
+2024-03-07 19:28:29,608 [WARN] SupportedApi:132 - Cannot load RTOS API schema: s4s-elt-must-match.1: The content of 'definitions' must match (annotation?, (simpleType | complexType)?, (unique | key | keyref)*)). A problem was found starting at: attribute.
+2024-03-07 19:28:29,785 [INFO] PluginManage:359 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2024-03-07 19:28:29,785 [INFO] PluginManage:310 - Check plugin power
+2024-03-07 19:28:29,796 [INFO] PluginManage:359 - Loaded plugin power (category:power,tabindex:4)
+2024-03-07 19:28:29,797 [INFO] PluginManage:310 - Check plugin projectmanager
+2024-03-07 19:28:29,819 [INFO] PluginManage:359 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2024-03-07 19:28:29,820 [INFO] PluginManage:310 - Check plugin thirdparty
+2024-03-07 19:28:29,982 [INFO] PluginManage:359 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2024-03-07 19:28:29,982 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
+2024-03-07 19:28:29,982 [INFO] PluginManage:310 - Check plugin tools
+2024-03-07 19:28:29,982 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
+2024-03-07 19:28:29,983 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
+2024-03-07 19:28:29,985 [INFO] PluginManage:359 - Loaded plugin tools (category:base,tabindex:7)
+2024-03-07 19:28:29,986 [INFO] PluginManage:310 - Check plugin tutovideos
+2024-03-07 19:28:30,171 [INFO] PluginManage:359 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2024-03-07 19:28:30,172 [INFO] PluginManage:310 - Check plugin updater
+2024-03-07 19:28:30,184 [INFO] PluginManage:359 - Loaded plugin updater (category:base,tabindex:12)
+2024-03-07 19:28:30,185 [INFO] PluginManage:310 - Check plugin userauth
+2024-03-07 19:28:30,190 [INFO] UserAuth:114 - Init User Auth plugin
+2024-03-07 19:28:30,191 [INFO] PluginManage:359 - Loaded plugin userauth (category:base,tabindex:14)
+2024-03-07 19:28:30,191 [INFO] PluginManage:283 - PluginManage : Loaded plugins [17]
+2024-03-07 19:28:30,437 [INFO] PinOutPanel:1499 - setPackage(No Configuration,No Configuration)
+2024-03-07 19:28:30,523 [INFO] CADModel:165 - CPN selected for project level
+2024-03-07 19:28:30,524 [INFO] CADModel:114 - Register for checkConnection events
+2024-03-07 19:28:30,540 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,540 [INFO] PluginManager:220 - loadIPPluginJar : add adc
+2024-03-07 19:28:30,543 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,543 [INFO] PluginManager:220 - loadIPPluginJar : add aes
+2024-03-07 19:28:30,546 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,547 [INFO] PluginManager:220 - loadIPPluginJar : add can
+2024-03-07 19:28:30,549 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,549 [INFO] PluginManager:220 - loadIPPluginJar : add comp
+2024-03-07 19:28:30,552 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,552 [INFO] PluginManager:220 - loadIPPluginJar : add cryp
+2024-03-07 19:28:30,556 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,556 [INFO] PluginManager:220 - loadIPPluginJar : add dfsdm
+2024-03-07 19:28:30,565 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,565 [INFO] PluginManager:220 - loadIPPluginJar : add dma
+2024-03-07 19:28:30,570 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,570 [INFO] PluginManager:220 - loadIPPluginJar : add dma3
+2024-03-07 19:28:30,572 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,572 [INFO] PluginManager:220 - loadIPPluginJar : add fatfs
+2024-03-07 19:28:30,579 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,579 [INFO] PluginManager:220 - loadIPPluginJar : add fmc
+2024-03-07 19:28:30,590 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,590 [INFO] PluginManager:220 - loadIPPluginJar : add freertos
+2024-03-07 19:28:30,593 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,593 [INFO] PluginManager:220 - loadIPPluginJar : add genericplugin
+2024-03-07 19:28:30,596 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,597 [INFO] PluginManager:220 - loadIPPluginJar : add gfxmmu
+2024-03-07 19:28:30,607 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,607 [INFO] PluginManager:220 - loadIPPluginJar : add gic
+2024-03-07 19:28:30,612 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,613 [INFO] PluginManager:220 - loadIPPluginJar : add gpio
+2024-03-07 19:28:30,618 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,618 [INFO] PluginManager:220 - loadIPPluginJar : add gtzc
+2024-03-07 19:28:30,622 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,622 [INFO] PluginManager:220 - loadIPPluginJar : add hash
+2024-03-07 19:28:30,625 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,625 [INFO] PluginManager:220 - loadIPPluginJar : add i2c
+2024-03-07 19:28:30,630 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,630 [INFO] PluginManager:220 - loadIPPluginJar : add i2s
+2024-03-07 19:28:30,634 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,634 [INFO] PluginManager:220 - loadIPPluginJar : add i3c
+2024-03-07 19:28:30,639 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,639 [INFO] PluginManager:220 - loadIPPluginJar : add ipddr
+2024-03-07 19:28:30,649 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,649 [INFO] PluginManager:220 - loadIPPluginJar : add linkedlist
+2024-03-07 19:28:30,655 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,655 [INFO] PluginManager:220 - loadIPPluginJar : add lorawan
+2024-03-07 19:28:30,657 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,657 [INFO] PluginManager:220 - loadIPPluginJar : add ltdc
+2024-03-07 19:28:30,666 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,667 [INFO] PluginManager:220 - loadIPPluginJar : add mdma
+2024-03-07 19:28:30,671 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,672 [INFO] PluginManager:220 - loadIPPluginJar : add nvic
+2024-03-07 19:28:30,674 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,674 [INFO] PluginManager:220 - loadIPPluginJar : add opamp
+2024-03-07 19:28:30,678 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,678 [INFO] PluginManager:220 - loadIPPluginJar : add openamp
+2024-03-07 19:28:30,683 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,683 [INFO] PluginManager:220 - loadIPPluginJar : add pdm2pcm
+2024-03-07 19:28:30,689 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,693 [INFO] PluginManager:220 - loadIPPluginJar : add plateformsettings
+2024-03-07 19:28:30,695 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,696 [INFO] PluginManager:220 - loadIPPluginJar : add quadspi
+2024-03-07 19:28:30,699 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,699 [INFO] PluginManager:220 - loadIPPluginJar : add resmgrutility
+2024-03-07 19:28:30,702 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,702 [INFO] PluginManager:220 - loadIPPluginJar : add sai
+2024-03-07 19:28:30,705 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,705 [INFO] PluginManager:220 - loadIPPluginJar : add spi
+2024-03-07 19:28:30,712 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,712 [INFO] PluginManager:220 - loadIPPluginJar : add stm32_wpan
+2024-03-07 19:28:30,714 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,714 [INFO] PluginManager:220 - loadIPPluginJar : add tim
+2024-03-07 19:28:30,718 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,718 [INFO] PluginManager:220 - loadIPPluginJar : add touchsensing
+2024-03-07 19:28:30,722 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,723 [INFO] PluginManager:220 - loadIPPluginJar : add tracer_emb
+2024-03-07 19:28:30,725 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,725 [INFO] PluginManager:220 - loadIPPluginJar : add ts
+2024-03-07 19:28:30,727 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,727 [INFO] PluginManager:220 - loadIPPluginJar : add tsc
+2024-03-07 19:28:30,729 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,729 [INFO] PluginManager:220 - loadIPPluginJar : add ucpd
+2024-03-07 19:28:30,733 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,733 [INFO] PluginManager:220 - loadIPPluginJar : add usart
+2024-03-07 19:28:30,736 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-03-07 19:28:30,737 [INFO] PluginManager:220 - loadIPPluginJar : add usbx
+2024-03-07 19:28:30,866 [INFO] CADModel:165 - CPN selected for project level
+2024-03-07 19:28:30,866 [INFO] CADModel:114 - Register for checkConnection events
+2024-03-07 19:28:30,867 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:30,867 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2024-03-07 19:28:31,034 [INFO] CADModel:165 - CPN selected for project level
+2024-03-07 19:28:31,034 [INFO] CADModel:114 - Register for checkConnection events
+2024-03-07 19:28:31,035 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,035 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2024-03-07 19:28:31,039 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,167 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,173 [INFO] DbMcusAds:53 - JSON generation date=Wed Nov 29 11:52:27 CET 2023 (1701255147349)
+2024-03-07 19:28:31,174 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,213 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2024-03-07 19:28:31,313 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,314 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,314 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,314 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2024-03-07 19:28:31,315 [FATAL] Updater:308 - Updater called before beeing initialized
+2024-03-07 19:28:31,371 [ERROR] Updater:1120 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2024-03-07 19:28:31,375 [INFO] Updater:1056 - Updater Version found : 6.10.0
+2024-03-07 19:28:31,394 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037
+2024-03-07 19:28:31,765 [INFO] MainUpdater:2873 - connection check result : 10
+2024-03-07 19:28:31,766 [INFO] MainUpdater:290 - Updater Check For Update Now.
+2024-03-07 19:28:31,767 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.100
+2024-03-07 19:28:31,776 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2024-03-07 19:28:32,098 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2024-03-07 19:28:32,158 [INFO] UserAuth:404 - Internet connection configuration mode: 1
+2024-03-07 19:28:32,172 [INFO] JxBrowserEngine:152 - Initiate JxBrowser Engine with user profile folder
+2024-03-07 19:28:32,851 [INFO] WebApp:161 - Instantiating new browser for Auth
+2024-03-07 19:28:33,479 [WARN] PackLoader:240 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSL.5.2.0
+2024-03-07 19:28:33,500 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SMBUS.2.1.0
+2024-03-07 19:28:33,510 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.23.0
+2024-03-07 19:28:33,755 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.2.0
+2024-03-07 19:28:34,064 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.1.0
+2024-03-07 19:28:34,084 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.1.0
+2024-03-07 19:28:34,088 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.19.1
+2024-03-07 19:28:34,096 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-MOTENV1.4.3.2
+2024-03-07 19:28:34,106 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.3
+2024-03-07 19:28:34,114 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.4
+2024-03-07 19:28:34,116 [INFO] WebApp:780 - Register for checkConnection events
+2024-03-07 19:28:34,116 [INFO] WebApp:414 - Apply proxy settings
+2024-03-07 19:28:34,116 [INFO] WebApp:499 - Chromium requires no authentication
+2024-03-07 19:28:34,125 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-FLIGHT1.5.0.2
+2024-03-07 19:28:34,133 [INFO] WebApp:442 - Direct internet connection detected
+2024-03-07 19:28:34,134 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE2.3.2.2
+2024-03-07 19:28:34,139 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.19.0
+2024-03-07 19:28:34,154 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.1.0
+2024-03-07 19:28:34,172 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.3.0.0
+2024-03-07 19:28:34,180 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.7.0.0
+2024-03-07 19:28:34,183 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.22.0
+2024-03-07 19:28:34,197 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SUBG2.4.2.0
+2024-03-07 19:28:34,271 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.3.0
+2024-03-07 19:28:34,487 [INFO] WebApp:192 - Starting web application
+2024-03-07 19:28:34,487 [INFO] WebApp:544 - Web application path used C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\db\plugins\mcufinder\reactClient1\index.html
+2024-03-07 19:28:34,504 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.2.0
+2024-03-07 19:28:34,515 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.3.1.0
+2024-03-07 19:28:34,523 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-SMARTAG2.1.2.0
+2024-03-07 19:28:34,536 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2024-03-07 19:28:34,537 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2024-03-07 19:28:34,539 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2024-03-07 19:28:34,541 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2024-03-07 19:28:34,544 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2024-03-07 19:28:34,546 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.2.0.0
+2024-03-07 19:28:34,558 [WARN] PackLoader:240 - Cannot read IP mode file for WES.I-CUBE-Cesium.1.3.0
+2024-03-07 19:28:34,565 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE2.3.3.0
+2024-03-07 19:28:34,570 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.2.2.0
+2024-03-07 19:28:34,582 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.2.0
+2024-03-07 19:28:34,600 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.0.0
+2024-03-07 19:28:34,635 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.2.1.0
+2024-03-07 19:28:34,644 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.21.3
+2024-03-07 19:28:34,650 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.3.0
+2024-03-07 19:28:34,660 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALGOBUILD.1.3.0
+2024-03-07 19:28:34,696 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G0.1.1.0
+2024-03-07 19:28:34,712 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.3.0.0
+2024-03-07 19:28:34,783 [WARN] PackLoader:240 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.2.0
+2024-03-07 19:28:34,831 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.2.1.0
+2024-03-07 19:28:34,837 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.3.0.0
+2024-03-07 19:28:34,856 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.2.0.0
+2024-03-07 19:28:34,862 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-SIGFOX1.3.2.0
+2024-03-07 19:28:34,867 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.5.1.0
+2024-03-07 19:28:34,877 [WARN] PackLoader:240 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.1.2
+2024-03-07 19:28:34,879 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.20.0
+2024-03-07 19:28:34,938 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.5.0
+2024-03-07 19:28:35,129 [WARN] PackLoader:240 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.3.1
+2024-03-07 19:28:35,194 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.2.0.1
+2024-03-07 19:28:35,205 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.0.0
+2024-03-07 19:28:35,214 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.6.0.0
+2024-03-07 19:28:35,234 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F4.1.1.0
+2024-03-07 19:28:35,243 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.2.0
+2024-03-07 19:28:35,261 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.2.0.0
+2024-03-07 19:28:35,306 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.6.0
+2024-03-07 19:28:35,492 [WARN] PackLoader:240 - Cannot read IP mode file for ITTIA_DB.I-CUBE-ITTIADB.8.8.0
+2024-03-07 19:28:35,501 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.2.0.0
+2024-03-07 19:28:35,509 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.4
+2024-03-07 19:28:35,516 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.3
+2024-03-07 19:28:35,539 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,539 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,544 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.1.0
+2024-03-07 19:28:35,546 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,546 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,547 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,547 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,547 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,558 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SFXS2LP1.3.1.0
+2024-03-07 19:28:35,577 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F4.1.0.0
+2024-03-07 19:28:35,582 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.1
+2024-03-07 19:28:35,586 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.0
+2024-03-07 19:28:35,595 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC6.3.0.0
+2024-03-07 19:28:35,601 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.4.1.0
+2024-03-07 19:28:35,608 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.8.1.0
+2024-03-07 19:28:35,621 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G0.1.0.0
+2024-03-07 19:28:35,637 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : LAN8742 Phy interface Condition cause : null
+2024-03-07 19:28:35,637 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.2.0.0
+2024-03-07 19:28:35,638 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2024-03-07 19:28:35,638 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2024-03-07 19:28:35,639 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2024-03-07 19:28:35,647 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0
+2024-03-07 19:28:35,664 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.1.0
+2024-03-07 19:28:35,678 [WARN] PackLoader:240 - Cannot read IP mode file for RoweBots.I-CUBE-UNISONRTOS.5.5.0-4
+2024-03-07 19:28:35,688 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.8.0.0
+2024-03-07 19:28:35,704 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,704 [WARN] ConditionMgr:438 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,707 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.2.0.0
+2024-03-07 19:28:35,711 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,711 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,712 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,712 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,713 [WARN] ConditionMgr:1039 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2024-03-07 19:28:35,720 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-FREERTOS.1.0.1
+2024-03-07 19:28:35,733 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.0.0
+2024-03-07 19:28:35,780 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.1.0
+2024-03-07 19:28:35,802 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.8.0.1
+2024-03-07 19:28:35,816 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SUBG2.5.0.0
+2024-03-07 19:28:35,947 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.3.1
+2024-03-07 19:28:35,983 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.2.0.0
+2024-03-07 19:28:35,998 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.3.0
+2024-03-07 19:28:36,017 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.1.1.1
+2024-03-07 19:28:36,028 [WARN] PackLoader:240 - Cannot read IP mode file for Infineon.AIROC-Wi-Fi-Bluetooth-STM32.1.5.1
+2024-03-07 19:28:36,038 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-SNS-MOTENVWB1.1.3.1
+2024-03-07 19:28:36,053 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.1.0.0
+2024-03-07 19:28:36,078 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.1.0.0
+2024-03-07 19:28:36,087 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.2.0.0
+2024-03-07 19:28:36,142 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.10.0.0
+2024-03-07 19:28:36,311 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-FREERTOS.1.1.0
+2024-03-07 19:28:36,330 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.0.0
+2024-03-07 19:28:36,344 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.1.0.0
+2024-03-07 19:28:36,386 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.1.0
+2024-03-07 19:28:36,585 [WARN] PackLoader:240 - Cannot read IP mode file for portGmbH.I-Cube-SoM-uGOAL.1.1.0
+2024-03-07 19:28:36,595 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALS.1.0.1
+2024-03-07 19:28:36,612 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.1.1.0
+2024-03-07 19:28:36,631 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.0.0
+2024-03-07 19:28:36,638 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.3.1.1
+2024-03-07 19:28:36,645 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.5.2.0
+2024-03-07 19:28:36,649 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.2.0.0
+2024-03-07 19:28:36,663 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.4.0
+2024-03-07 19:28:36,690 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.4.1
+2024-03-07 19:28:36,731 [WARN] PackLoader:240 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.2.0
+2024-03-07 19:28:36,734 [INFO] ThirdParty:978 - Integrity check success = true
+2024-03-07 19:28:36,734 [INFO] IntegrityCheckThread:100 - exiting critical section [integrity check]
+2024-03-07 19:28:36,734 [INFO] IntegrityCheckThread:103 - End integrity checks thread
+2024-03-07 19:28:55,366 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2024-03-07 19:28:55,367 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2024-03-07 19:28:55,372 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
