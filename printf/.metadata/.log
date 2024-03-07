@@ -767,3 +767,6 @@ java.lang.Exception
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-03-07 20:59:08.658
 !MESSAGE Indexed 'if_else' (0 sources, 0 headers) in 0.003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-07 21:12:36.926
+!MESSAGE Indexed 'condition operator' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
