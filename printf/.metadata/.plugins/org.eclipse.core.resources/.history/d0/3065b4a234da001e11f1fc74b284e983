@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+	char data = 100;
+	char* ptr = (char *) &data;
+	*ptr = 65;
+	printf("%p", ptr);
+	printf("%p", &data);
+
+	return 0;
+}
+
+

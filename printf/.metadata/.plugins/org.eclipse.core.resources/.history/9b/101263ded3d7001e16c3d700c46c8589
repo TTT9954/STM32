@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include "math.h"
+
+int main()
+{
+	unsigned char value = (unsigned char) (0x87 + 0x00FF);
+
+	float result = 80/3;
+
+	printf("");
+
+	return 0;
+}
+
+

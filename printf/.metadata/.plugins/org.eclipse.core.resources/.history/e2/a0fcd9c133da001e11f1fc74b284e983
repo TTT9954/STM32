@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+	char data = 100;
+	char* ptr = (char *) 0x00007FFF8E3C3824;
+	*ptr = 65;
+	int value = *ptr;
+	printf("%d", *ptr);
+	return 0;
+}
+
+

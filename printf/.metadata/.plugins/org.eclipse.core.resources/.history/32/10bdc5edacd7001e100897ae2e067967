@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include "math.h"
+
+int main()
+{
+	printf("Add: %d", math_add(1, 2));
+	printf("Sub: %d", math_sub(1, 2));
+	printf("Mul: %lld", math_mul(1, 2));
+	printf("Div: %f", math_div(1, 2));
+}
+
+

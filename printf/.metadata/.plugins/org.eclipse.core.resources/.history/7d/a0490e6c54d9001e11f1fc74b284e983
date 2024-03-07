@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+	double charge;
+	double charge_of_electron;
+	double total_number_of_electrons;
+	printf("Enter number of charge: ");
+	scanf("%lf", &charge);
+	printf("Enter charge of electron: ");
+	scanf("%le", &charge_of_electron);
+
+	total_number_of_electrons = (charge/charge_of_electron)*-1;
+
+	printf("Total number of electrons: %lf", total_number_of_electrons);
+	printf("Total number of electrons: %le", total_number_of_electrons);
+
+	printf("Press Enter to exit the application");
+	while(getchar()!='\n');
+	getchar();
+
+}
+
+

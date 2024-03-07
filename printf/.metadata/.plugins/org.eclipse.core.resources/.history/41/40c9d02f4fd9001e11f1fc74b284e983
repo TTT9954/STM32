@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include "math.h"
+
+int main()
+{
+	float a,b,c;
+	printf("Enter number 1: ");
+	fflush(stdout);
+	scanf("%f", &a);
+	printf("\nEnter number 2: ");
+	fflush(stdout);
+	scanf("%f", &b);
+	printf("\nEnter number 3: ");
+	fflush(stdout);
+	scanf("%f", &c);
+	printf("\n%f", (float)(a+b+c)/3);
+	printf("Please press Enter to exit the application !");
+	while(getchar() != '\n');
+	getchar();
+
+	return 0;
+}
+
+

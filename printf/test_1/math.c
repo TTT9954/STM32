@@ -1,0 +1,24 @@
+#include "math.h"
+
+int math_add(int a, int b)
+{
+	return a+b;
+}
+
+int math_sub(int a, int b)
+{
+	return a-b;
+}
+
+long long int math_mul(int a, int b)
+{
+	return a*b;
+}
+
+float math_div(int a, int b)
+{
+	return (float)a/b;
+}
+
+
+
