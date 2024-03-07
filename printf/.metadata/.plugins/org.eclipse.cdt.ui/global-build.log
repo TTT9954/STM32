@@ -1,4 +1,1 @@
-20:59:20 **** Rebuild of configuration Debug for project if_else ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o if_else.exe main.o 
+Info: Nothing to build for if_else
