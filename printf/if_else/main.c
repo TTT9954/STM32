@@ -7,11 +7,8 @@ int compare(int,int);
 
 int main()
 {
-	//uint8_t age = get_voter_age();
-	uint8_t a=1, b=0;
-	if(!(a+b)) printf("You are not eligible to vote\n");
-	else printf("You can vote\n");
-	//(age < 18) ? printf("You are not eligible to vote\n") : printf("You can vote\n");
+	uint8_t age = get_voter_age();
+	(age < 18) ? printf("You are not eligible to vote\n") : printf("You can vote\n");
 /*	float number1, number2;
 	int check;
 	printf("Enter number 1: ");
