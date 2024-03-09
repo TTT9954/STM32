@@ -1,0 +1,8 @@
+Address of the Clock Control register (AHB1ENR)
+0x40023800 + 0x30 = 0x40023830
+
+Address of GPIO Mode (GPIOD_MODER)
+0x40020C00 + 0x00 = 0x40020C00
+
+Address of GPIO port output data register (GPIO_ODR)
+0x40020C00 + 0x14 = 0x40020C14

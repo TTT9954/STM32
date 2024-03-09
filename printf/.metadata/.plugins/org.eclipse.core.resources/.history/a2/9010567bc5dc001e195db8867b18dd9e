@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define PI 3.14
+
+void wait_input();
+int main()
+{
+	char choice;
+	float Area;
+	printf("----------Area calculation program----------\n");
+	printf("Circle ---> c\n");
+	printf("Triangle ---> t\n");
+	printf("Rectangle ---> r\n");
+	printf("Square ---> s\n");
+	printf("Trapezoid ---> z\n");
+	printf("Please input 1 character: ");
+	scanf("%c", &choice);
+	switch(choice)
+	{
+		case 'c':
+			float radius;
+			printf("Please input Radius: ");
+			scanf("%f", &radius);
+			Area = PI*radius*radius;
+			printf("Area of Circle: %.2f\n", Area);
+			wait_input();
+			break;
+		case 't':
+			float base;
+			float height;
+			printf("Please input Base: ");
+			scanf("%f", &base);
+			printf("Please input Height: ");
+			scanf("%f", &height);
+			Area = (height*base)/2;
+			printf("Area of Triangle: %.2f\n", Area);
+			wait_input();
+			break;
+		case 'r':
+			float width;
+			float length;
+			printf("Please input Length: ");
+			scanf("%f", &length);
+			printf("Please input Width: ");
+			scanf("%f", &width);
+			Area = (length*width);
+			printf("Area of Rectangle: %.2f\n", Area);
+			wait_input();
+			break;
+		case 's':
+			float side;
+			printf("Please input Side: ");
+			scanf("%f", &side);
+			Area = side*side;
+			printf("Area of Square: %.2f\n", Area);
+			wait_input();
+			break;
+		case 'z':
+			float base_top, base_down, height_z;
+			printf("Please enter Base top: ");
+			scanf("%f", &base_top);
+			printf("Please enter Base down: ");
+			scanf("%f", &base_down);
+			printf("Please enter Height: ");
+			scanf("%f", &height_z);
+			Area = ((base_top+base_down)*height_z)/2;
+			printf("Area of Trapezoid: %.2f\n", Area);
+			wait_input();
+			break;
+		default:
+			printf("Invalid inpute")
+			wait_input();
+			break;
+	}
+
+	return 0;
+}
+
+void wait_input()
+{
+	printf("Please enter to exit the application");
+	while(getchar() != '\n');
+	getchar();
+}
+

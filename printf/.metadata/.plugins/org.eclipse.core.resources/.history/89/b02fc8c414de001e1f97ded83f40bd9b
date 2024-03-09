@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void wait_for_user_iput();
+
+int main()
+{
+	uint8_t start_num, end_num, even_count;
+	print("Enter starting and ending numbers: ");
+	scanf("%d %d", &start_num, &end_num);
+	while(start_num <= end_num)
+	{
+		if((start_num % 2) == 0)
+		{
+			printf("Even number: %d", start_num);
+			even_count++;
+		}
+		start_num++;
+	}
+	printf("Total even numbers: %d", even_count);
+	wait_for_user_input();
+	return 0;
+}
+
+void wait_for_user_input()
+{
+	printf("Press enter to exit the application");
+	while(getchar() != '\n');
+	getchar();
+}
+
