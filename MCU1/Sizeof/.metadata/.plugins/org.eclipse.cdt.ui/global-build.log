@@ -1,0 +1,13 @@
+22:32:54 **** Incremental Build of configuration Debug for project const ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o const.exe main.o 
+c:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file const.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:32:58 **** Incremental Build of configuration Debug for project const ****
+Info: Internal Builder is used for build
+gcc -o const.exe main.o 
+22:33:12 **** Incremental Build of configuration Debug for project const ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o const.exe main.o 

@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdint.h>
+
+struct carModel
+{
+	unsigned int carNumber;
+	uint32_t carPrice;
+	uint16_t carMaxSpeed;
+	float carWeight;
+};
+
+int main()
+{
+	struct carModel carBMW = {2021,15000,220,1330};
+
+
+}
+
+

@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main()
+{
+	long long int data = 0xFFFEABCD11112345;
+	char* pAddress = (char *)&data;
+	printf("Value at %p address: %x", pAddress, *pAddress);
+}
+
+

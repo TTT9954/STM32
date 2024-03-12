@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdint.h>
+
+void wait_for_input_user();
+
+int main()
+{
+	uint8_t data = 10;
+	data = 50;
+
+	wait_for_input_user();
+	return 0;
+}
+
+void wait_for_input_user()
+{
+	printf("\nPress enter to exit the application");
+	while(getchar() != '\n');
+	getchar();
+}
+

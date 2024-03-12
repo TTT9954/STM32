@@ -1,7 +1,0 @@
-14:56:37 **** Incremental Build of configuration Debug for project for_loop ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o for_loop.exe main.o 
-
-14:56:38 Build Finished. 0 errors, 0 warnings. (took 366ms)
-

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main()
+{
+	char choice;
+	printf("----------Area calculation program----------\n");
+	printf("Circle ---> c\n");
+	printf("Triangle ---> t\n");
+	printf("Rectangle ---> r\n");
+	printf("Square ---> s\n");
+	printf("Trapezoid ---> z\n");
+	printf("Please enter character: ");
+	scanf("%c", &choice);
+
+}
+
+

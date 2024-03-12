@@ -1,6 +1,0 @@
-14:36:27 **** Incremental Build of configuration Debug for project while_loop ****
-Info: Internal Builder is used for build
-gcc -o while_loop.exe main.o 
-
-14:36:27 Build Finished. 0 errors, 0 warnings. (took 213ms)
-
