@@ -1,0 +1,7 @@
+17:19:00 **** Rebuild of configuration Debug for project struct_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o struct_2.exe main.o 
+
+17:19:01 Build Finished. 0 errors, 0 warnings. (took 434ms)
+

@@ -2,3 +2,5 @@
 1710151644974	Delete resource 'LED_test'
 1710151650492	Delete resource 'pin_Read'
 1710151659082	Delete resource 'test'
+1710260286248	Rename resource 'struct_pointer'
+1710260296240	Rename resource 'struct'

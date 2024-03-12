@@ -1,0 +1,7 @@
+16:52:11 **** Incremental Build of configuration Debug for project struct_pointer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o struct_pointer.exe main.o 
+
+16:52:12 Build Finished. 0 errors, 0 warnings. (took 386ms)
+
