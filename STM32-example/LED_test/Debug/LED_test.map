@@ -877,14 +877,14 @@ LOAD C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000000000018a6       0x6a ./Src/main.o
  .debug_macro   0x0000000000001910      0x1df ./Src/main.o
 
-.debug_line     0x0000000000000000      0x62b
- .debug_line    0x0000000000000000      0x5b0 ./Src/main.o
- .debug_line    0x00000000000005b0       0x7b ./Startup/startup_stm32f407vgtx.o
+.debug_line     0x0000000000000000      0x62d
+ .debug_line    0x0000000000000000      0x5b2 ./Src/main.o
+ .debug_line    0x00000000000005b2       0x7b ./Startup/startup_stm32f407vgtx.o
 
-.debug_str      0x0000000000000000     0x75f4
- .debug_str     0x0000000000000000     0x75a0 ./Src/main.o
-                                       0x778b (size before relaxing)
- .debug_str     0x00000000000075a0       0x54 ./Startup/startup_stm32f407vgtx.o
+.debug_str      0x0000000000000000     0x75f5
+ .debug_str     0x0000000000000000     0x75a1 ./Src/main.o
+                                       0x778c (size before relaxing)
+ .debug_str     0x00000000000075a1       0x54 ./Startup/startup_stm32f407vgtx.o
 
 .debug_frame    0x0000000000000000       0x58
  .debug_frame   0x0000000000000000       0x2c ./Src/main.o

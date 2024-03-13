@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdint.h>
+
+void input_array(uint8_t *pArray, uint8_t size_Array);
+void array_display(uint8_t const *const pArray, uint8_t n);
+
+int main()
+{
+	uint8_t someData[10] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
+	uint8_t size = sizeof(someData) / sizeof(uint8_t);
+	*(someData) = 0x10;
+	array_display(someData, size);
+	return 0;
+}
+
+void array_display(uint8_t const *const pArray, uint8_t n)
+{
+	for(uint8_t i = 0; i < n; i++)
+	{
+		printf("a[%d]= %#x\n", i, *(pArray+i));
+	}
+}
+
+void input_array(uint8_t *pArray, uint8_t size_Array)
+{
+	for(uint8_t i = 0; i < size_Array, i++)
+	{
+		scanf("%d", *(pArray+i));
+	}
+}

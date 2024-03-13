@@ -6,7 +6,7 @@ typedef struct Packet
 	uint32_t crc:2;
 	uint32_t status:1;
 	uint32_t payload:12;
-	uint8_t bat:3;
+	uint32_t bat:3;
 	uint32_t sensor:3;
 	uint32_t longAddr:8;
 	uint32_t shortAddr:2;
@@ -20,6 +20,7 @@ int main()
 	scanf("%x", &packetValue);
 
 	Packets packet1;
+	uint32_t *ptr = (uint32_t *)&packet1;
 	packet1.crc = (uint8_t) (packetValue & 0x03);
 	packet1.status = (uint8_t) ((packetValue >> 2) & 0x01);
 	packet1.payload = (uint16_t) ((packetValue >> 3) & 0xFFF);
@@ -38,6 +39,7 @@ int main()
 	printf("Short Address: %#x\n", packet1.shortAddr);
 	printf("Address Mode: %#x\n", packet1.addrMode);
 
+	printf("%#x\n", *ptr);
 	printf("Total size of Packets struct: %llu\n", sizeof(packet1));
 
 	return 0;

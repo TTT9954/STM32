@@ -41,13 +41,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_macro  00001aef  00000000  00000000  000105ed  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_line   0000062b  00000000  00000000  000120dc  2**0
+ 19 .debug_line   0000062d  00000000  00000000  000120dc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_str    000075f4  00000000  00000000  00012707  2**0
+ 20 .debug_str    000075f5  00000000  00000000  00012709  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_frame  00000058  00000000  00000000  00019cfc  2**2
+ 21 .debug_frame  00000058  00000000  00000000  00019d00  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000048  00000000  00000000  00019d54  2**0
+ 22 .debug_line_str 00000048  00000000  00000000  00019d58  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -81,27 +81,27 @@ Disassembly of section .text:
  80001c4:	080002ec 	.word	0x080002ec
 
 080001c8 <main>:
-#include <stdint.h>
+typedef struct
+{
 
-typedef uint32_t volatile __U32V;
-
+}GPIOD_ODR;
 int main(void)
 {
  80001c8:	b480      	push	{r7}
  80001ca:	b087      	sub	sp, #28
  80001cc:	af00      	add	r7, sp, #0
-	__U32V *RCC_AHB1ENR = (__U32V *) 0x40023830;
+	__U32V *RCC_AHB1_ENR = (__U32V *) 0x40023830;
  80001ce:	4b1c      	ldr	r3, [pc, #112]	; (8000240 <main+0x78>)
  80001d0:	60fb      	str	r3, [r7, #12]
-	__U32V *GPIOD_MODER = (__U32V *) 0x40020C00;
+	__U32V *GPIOx_MODER = (__U32V *) 0x40020C00;
  80001d2:	4b1c      	ldr	r3, [pc, #112]	; (8000244 <main+0x7c>)
  80001d4:	60bb      	str	r3, [r7, #8]
-	__U32V *GPIOD_ODR = (__U32V *) 0x40020C14;
+	__U32V *GPIOx_ODR = (__U32V *) 0x40020C14;
  80001d6:	4b1c      	ldr	r3, [pc, #112]	; (8000248 <main+0x80>)
  80001d8:	607b      	str	r3, [r7, #4]
 
     // 1. Enable the clock for GPIOD peripheral in the AHB1ENR
-    *RCC_AHB1ENR = *RCC_AHB1ENR | (1<<3); // SET 3th bit position as 1
+    *RCC_AHB1_ENR = *RCC_AHB1_ENR | (1<<3); // SET 3th bit position as 1
  80001da:	68fb      	ldr	r3, [r7, #12]
  80001dc:	681b      	ldr	r3, [r3, #0]
  80001de:	f043 0208 	orr.w	r2, r3, #8
@@ -110,14 +110,14 @@ int main(void)
 
     // 2. Set output mode for GPIOD in the  GPIOx_MODER
     // a. Clear the 24th bit positions
-    *GPIOD_MODER &= ~(3 << 24);
+    *GPIOx_MODER &= ~(3 << 24);
  80001e6:	68bb      	ldr	r3, [r7, #8]
  80001e8:	681b      	ldr	r3, [r3, #0]
  80001ea:	f023 7240 	bic.w	r2, r3, #50331648	; 0x3000000
  80001ee:	68bb      	ldr	r3, [r7, #8]
  80001f0:	601a      	str	r2, [r3, #0]
     // b. Set 24th bit position as 1 (SET)
-    *GPIOD_MODER |= (1 << 24);
+    *GPIOx_MODER |= (1 << 24);
  80001f2:	68bb      	ldr	r3, [r7, #8]
  80001f4:	681b      	ldr	r3, [r3, #0]
  80001f6:	f043 7280 	orr.w	r2, r3, #16777216	; 0x1000000
@@ -133,7 +133,7 @@ int main(void)
  8000200:	617b      	str	r3, [r7, #20]
  8000202:	e008      	b.n	8000216 <main+0x4e>
     	{
-    		*GPIOD_ODR |= (1 << 12);
+    		*GPIOx_ODR |= (1 << 12);
  8000204:	687b      	ldr	r3, [r7, #4]
  8000206:	681b      	ldr	r3, [r3, #0]
  8000208:	f443 5280 	orr.w	r2, r3, #4096	; 0x1000
@@ -155,7 +155,7 @@ int main(void)
  8000220:	613b      	str	r3, [r7, #16]
  8000222:	e008      	b.n	8000236 <main+0x6e>
     	{
-    		*GPIOD_ODR &= ~(1 << 12);
+    		*GPIOx_ODR &= ~(1 << 12);
  8000224:	687b      	ldr	r3, [r7, #4]
  8000226:	681b      	ldr	r3, [r3, #0]
  8000228:	f423 5280 	bic.w	r2, r3, #4096	; 0x1000

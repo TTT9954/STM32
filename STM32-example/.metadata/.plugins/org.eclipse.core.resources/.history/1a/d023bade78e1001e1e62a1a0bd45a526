@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main()
+{
+	uint8_t studentAge[100];
+	printf("Size of an array = %d\n", studentAge);
+	return 0;
+}
+
+

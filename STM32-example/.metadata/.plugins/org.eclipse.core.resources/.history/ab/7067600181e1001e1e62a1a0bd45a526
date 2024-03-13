@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdint.h>
+
+void input_array(uint8_t *pArray, uint8_t size_Array);
+void array_display(uint8_t const *const pArray, uint8_t n);
+
+int main()
+{
+	uint8_t size_array1,size_array2;
+
+	printf("Enter number of elements of 2 arrays: ");
+	scanf("%hhu %hhu", &size_array1, &size_array2);
+
+	uint8_t a[size_array1], b[size_array2];
+
+	printf("Enter elements of array 1: ");
+	input_array(a, size_array1);
+	printf("Enter elements of array 2: ");
+	input_array(b, size_array2);
+
+	array_display(a, size_array1);
+	array_display(b, size_array2);
+	return 0;
+}
+
+void input_array(uint8_t *pArray, uint8_t size_Array)
+{
+	for(uint8_t i = 0; i < size_Array; i++)
+	{
+		scanf("%hhu", &(*(pArray+i)));
+	}
+}
+
+void array_display(uint8_t const *const pArray, uint8_t n)
+{
+	for(uint8_t i = 0; i < n; i++)
+	{
+		printf("a[%d]= %#x\n", i, *(pArray+i));
+	}
+}

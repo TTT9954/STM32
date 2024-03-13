@@ -1,11 +1,12 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test.elf,org.eclipse.launchbar.core.descriptorType.default\:test_1.exe,org.eclipse.launchbar.core.descriptorType.default\:Pointer.exe,org.eclipse.launchbar.core.descriptorType.default\:Pointer_2.exe,org.eclipse.launchbar.core.descriptorType.default\:if_else.exe,org.eclipse.launchbar.core.descriptorType.default\:const.exe,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pin_Read Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test.elf,org.eclipse.launchbar.core.descriptorType.default\:test_1.exe,org.eclipse.launchbar.core.descriptorType.default\:Pointer.exe,org.eclipse.launchbar.core.descriptorType.default\:Pointer_2.exe,org.eclipse.launchbar.core.descriptorType.default\:if_else.exe,org.eclipse.launchbar.core.descriptorType.default\:const.exe,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pin_Read Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_toggle_bitfield Debug,org.eclipse.launchbar.core.descriptorType.default\:array.exe
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_test.elf/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_toggle_bitfield\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pin_Read\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pin_Read\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test/activeLaunchMode=run
@@ -14,6 +15,8 @@ org.eclipse.launchbar.core.descriptorType.default\:LED_test.elf/activeLaunchMode
 org.eclipse.launchbar.core.descriptorType.default\:Pointer.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Pointer.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Pointer_2.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:array.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:array.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:const.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:const.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:if_else.exe/activeLaunchMode=debug

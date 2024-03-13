@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main()
+{
+	uint8_t someData[10] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
+	for(uint8_t i = 0; i<sizeof(someData); i++)
+	{
+		printf("a[%d]= %#x\n", i, *(someData+i));
+	}
+
+	*(someData+2) = 0x33;
+	someData[3] = 0x44;
+	for(uint8_t i = 0; i<sizeof(someData); i++)
+	{
+		printf("%#x\t", *(someData+i));
+	}
+	return 0;
+}
+
+
