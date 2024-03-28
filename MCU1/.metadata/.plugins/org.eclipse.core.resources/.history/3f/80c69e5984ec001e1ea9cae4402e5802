@@ -1,0 +1,47 @@
+#include <stdint.h>
+
+#define RCC_BASE_ADDRESS 0x40023800
+#define RCC_CR_OFFSET 0x00
+#define RCC_CFGR_OFFSET 0x08
+#define RCC_AHB1ENR_OFFSET 0x30
+#define RCC_CR (RCC_BASE_ADDRESS + RCC_CR_OFFSET)
+#define RCC_CFGR (RCC_BASE_ADDRESS + RCC_CFGR_OFFSET)
+#define RCC_AHB1ENR (RCC_BASE_ADDRESS + RCC_AHB1ENR_OFFSET)
+
+#define GPIOA_BASE_ADDRESS 0x40020000
+#define GPIOA_MODER_OFFSET 0x00
+#define GPIOA_AFRH_OFFSET 0x24
+#define GPIOA_MODER (GPIOA_BASE_ADDRESS + GPIOA_MODER_OFFSET)
+#define GPIOA_AFRH (GPIOA_BASE_ADDRESS + GPIOA_AFRH_OFFSET)
+
+int main(void)
+{
+	uint32_t *pRccControl = (uint32_t *) RCC_CR;
+    uint32_t *pRccConfiguration = (uint32_t *) RCC_CFGR;
+    uint32_t *pAhb1_en = (uint32_t *) RCC_AHB1ENR;
+    uint32_t *pGpioA_Mode = (uint32_t *) GPIOA_MODER;
+    uint32_t *pGpioA_Alternate_High = (uint32_t *) GPIOA_AFRH;
+
+    // Configure RCC control register to enable HSE
+    *pRccControl |= (1 << 16);
+
+    // Wait until HSE clock from external crystal stabilizes (only if crystal is connected)
+    *pRccControl |= (1 << 17);
+
+    // Configure the RCC_CFGR MCO1 bit field to enable HSE as clock source
+    *pRccConfiguration |= (0x2 << 21);
+
+    // Configure MCO1 prescaler by 4
+    *pRccConfiguration |= (1 << 26) | (1 << 25);
+
+    // Enable peripheral clock for GPIOA
+    *pAhb1_en |= (1 << 0);
+
+    // Configure mode of 8th pin (PA8) on GPIOA as Alternate Function mode
+    *pGpioA_Mode &= ~(3 << 16); //Clear
+    *pGpioA_Mode |= (2 << 16);	// Set as alternate function
+
+    // Configure the alternate function register to set the mode AF0
+    *pGpioA_Alternate_High &= ~(0xff << 0);
+	for(;;);
+}

@@ -1,0 +1,221 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define delay() for(int i = 0; i < 1000000; i++);
+
+typedef uint32_t volatile __U32V;
+
+uint8_t keypad_scan();
+void Blink_LED();
+
+uint8_t count = 0;
+uint32_t row[4] = {0,1,2,3};
+uint32_t col[3] = {9,10,11};
+
+__U32V *RCC_AHB1ENR = (__U32V *) 0x40023830;
+
+__U32V *GPIOD_MODER = (__U32V *) 0x40020C00;
+__U32V *GPIOD_IDR = (__U32V *)(0x40020C00 + 0x10);
+__U32V *GPIOD_PUPD = (__U32V *)(0x40020C00 + 0x0C);
+__U32V *GPIOD_ODR = (__U32V *) 0x40020C14;
+
+__U32V *GPIOB_MODER = (__U32V *) 0x40020400;
+__U32V *GPIOB_IDR = (__U32V *)(0x40020400 + 0x10);
+__U32V *GPIOB_PUPD = (__U32V *)(0x40020400 + 0x0C);
+__U32V *GPIOB_ODR = (__U32V *) (0x40020400 + 0x14);
+
+__U32V *GPIOA_MODER = (__U32V *) 0x40020000;
+__U32V *GPIOA_ODR = (__U32V *) 0x40020014;
+
+int main(void)
+{
+    // 1. Enable the clock for GPIOD peripheral in the AHB1ENR
+    *RCC_AHB1ENR |= (1 << 0) | (1 << 1) | (1 << 3); // SET 3th bit position as 1
+
+    *GPIOA_MODER |= (1 << 0) | (1 << 2) | (1 << 4) | (1 << 6);
+
+    *GPIOB_MODER |= (1 << 0);
+    // 2. Configure PD0, PD1, PD2, PD3 as OUTPUT (rows)
+
+    *GPIOD_MODER |= (1 << 0) | (1 << 2) | (1 << 4) | (1 << 6);
+
+    // 3. Configure PD8, PD9, PD10, PD11 as INPUT (colunms)
+    *GPIOD_MODER &= ~(1 << 16) | ~(1 << 18) | ~(1 << 20) | ~(1 << 22);
+
+    *GPIOD_PUPD |= (1 << 16) | (1 << 18) | (1 << 20) | (1 << 22);
+
+    *GPIOB_ODR |= (1 << 0);
+
+    while(1)
+    {
+
+    }
+
+    return 0;
+}
+
+uint8_t keypad_scan()
+{
+	for(uint32_t i = 0; i < 4; i++)
+	{
+		for(uint32_t j = 0; j < 3; j++)
+		{
+			*GPIOD_ODR |= 0x0F;
+			*GPIOD_ODR &= ~(1 << row[i]);
+			if(i == 0)
+			{
+				if(j == 0)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 0);
+					    count = 1;
+					    return count;
+					}
+				}
+				if(j == 1)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 0);
+					    count = 2;
+					    return count;
+					}
+				}
+				if(j == 2)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 0);
+					    count = 3;
+
+					}
+				}
+		   }
+		   if(i == 1)
+		   {
+				if(j == 0)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 1);
+					    count = 4;
+
+					}
+				}
+				if(j == 1)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 1);
+					    count = 5;
+
+					}
+				}
+				if(j == 2)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 1);
+					    count = 6;
+
+					}
+				}
+		   }
+		   if(i == 2)
+		   {
+				if(j == 0)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 2);
+					    count = 7;
+
+					}
+				}
+				if(j == 1)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 2);
+					    count = 8;
+
+					}
+				}
+				if(j == 2)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 2);
+					    count = 9;
+
+					}
+				}
+		   }
+		   if(i == 3)
+		   {
+				if(j == 0)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 3);
+					    count = 10;
+
+					}
+				}
+				if(j == 1)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 3);
+					    count = 11;
+					}
+				}
+				if(j == 2)
+				{
+					if((!(*GPIOD_IDR & (1<<col[j]))))
+					{
+					    if((!(*GPIOD_IDR & (1<<col[j]))))
+					    while((!(*GPIOD_IDR & (1<<col[j]))));
+					    //*GPIOA_ODR ^= (1 << 3);
+					    count = 12;
+					}
+				}
+		   }
+
+		}
+	}
+	return count;
+}
+
+void Blink_LED()
+{
+	while(count > 0)
+	{
+		delay();
+		*GPIOA_ODR ^= (1 << 0);
+		count--;
+	}
+}

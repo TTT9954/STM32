@@ -1,0 +1,10 @@
+14:46:33 **** Incremental Build of configuration Debug for project Stringvariable_vs_Stringliteral ****
+make -j8 all 
+arm-none-eabi-size  Stringvariable_vs_Stringliteral.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4972	    100	   1900	   6972	   1b3c	Stringvariable_vs_Stringliteral.elf
+Finished building: default.size.stdout
+ 
+
+14:46:33 Build Finished. 0 errors, 0 warnings. (took 214ms)
+

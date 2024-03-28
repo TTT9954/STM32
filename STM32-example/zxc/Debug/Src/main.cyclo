@@ -1,0 +1,8 @@
+../Src/main.c:50:5:main	6
+../Src/main.c:85:6:init_PORT	1
+../Src/main.c:107:6:delayMs	3
+../Src/main.c:114:6:SEVSEG_putdigit	1
+../Src/main.c:124:6:SEVSEG_putnumber_t	1
+../Src/main.c:140:6:SEVSEG_putnumber_matrix	1
+../Src/main.c:154:6:keypad_scan	5
+../Src/main.c:179:6:matrix_display_segment	3

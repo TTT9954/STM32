@@ -1,3 +1,4 @@
 "./Src/main.o"
+"./Src/syscalls.o"
 "./Src/sysmem.o"
-"./Startup/startup_stm32g0b1retx.o"
+"./Startup/startup_stm32f407vgtx.o"

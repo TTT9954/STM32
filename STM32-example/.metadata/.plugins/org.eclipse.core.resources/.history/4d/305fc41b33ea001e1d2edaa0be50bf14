@@ -1,0 +1,274 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define delay(time) for(int i = 0; i < time; i++);
+
+typedef uint32_t volatile __U32V;
+
+void init_PORT();
+void keypad_scan();
+void display(uint8_t digit);
+void seven_segment_display();
+void SEVSEG_putnumber_matrix();
+void matrix_display_segment();
+
+uint32_t seven_seg[10] = {0x4000, 0x7900, 0x2400, 0x3000, 0x1900, 0x1200, 0x0200, 0x7800, 0x0000, 0x1000};
+uint32_t digit_seg[4] = {0x0E, 0x0D, 0x0B, 0x07};
+uint32_t stored_data[4] = {0xFF,0xFF,0xFF,0xFF};
+uint32_t matrix_keyboard[12] = {61, 118, 117, 115, 110, 109, 107, 94, 93, 91, 62, 59};
+uint8_t row = 0x70;
+uint8_t digit[4]={};
+uint8_t count = 0;
+uint8_t m_button = 12;
+int keyNum = 0;
+uint8_t j = 0;
+
+__U32V *RCC_AHB1ENR = (__U32V *) 0x40023830;
+
+__U32V *GPIOD_MODER = (__U32V *) 0x40020C00;
+__U32V *GPIOD_IDR = (__U32V *)(0x40020C00 + 0x10);
+__U32V *GPIOD_PUPD = (__U32V *)(0x40020C00 + 0x0C);
+__U32V *GPIOD_ODR = (__U32V *) 0x40020C14;
+
+__U32V *GPIOC_MODER = (__U32V *) 0x40020800;
+__U32V *GPIOC_IDR = (__U32V *)(0x40020800 + 0x10);
+__U32V *GPIOC_PUPD = (__U32V *)(0x40020800 + 0x0C);
+__U32V *GPIOC_ODR = (__U32V *)(0x40020800 + 0x14);
+
+__U32V *GPIOB_MODER = (__U32V *) 0x40020400;
+__U32V *GPIOB_IDR = (__U32V *)(0x40020400 + 0x10);
+__U32V *GPIOB_PUPD = (__U32V *)(0x40020400 + 0x0C);
+__U32V *GPIOB_ODR = (__U32V *)(0x40020400 + 0x14);
+
+__U32V *GPIOA_MODER = (__U32V *) 0x40020000;
+__U32V *GPIOA_ODR = (__U32V *) 0x40020014;
+
+uint32_t temp = 0x08;
+uint32_t number;
+void delayMs(uint32_t n)
+{
+    int i;
+    for (; n > 0; n--)
+        for (i = 0; i < 3200; i++) ;
+}
+
+void SEVSEG_putdigit(unsigned char szam, unsigned char digit)
+{
+	*GPIOC_ODR = (1 << digit);
+	*GPIOB_ODR = seven_seg[szam];
+	delayMs(1);
+	*GPIOC_ODR = 0x00;
+	*GPIOB_ODR |= 0xFF;
+
+}
+
+void SEVSEG_putnumber_t(int number)
+{
+	digit[3] = number/1000;
+
+	digit[2] = number/100%10;
+
+	digit[1] = number/10%10;
+
+	digit[0] = number%10;
+
+	digit[j+1] = digit[j];
+	SEVSEG_putdigit(digit[j], j);
+	j = (j+1)%2;
+	delayMs(1);
+	*GPIOC_ODR = 0x00;
+}
+
+void SEVSEG_putnumber_matrix()
+{
+//	keypad_scan();
+//	uint8_t i = 0;
+//	digit[i+1] = digit[i];
+//	digit[0] = m_button;
+//	SEVSEG_putdigit(digit[j], j);
+//	j = (j+1)%2;
+//	delayMs(10);
+//	*GPIOC_ODR = 0x00;
+	SEVSEG_putdigit(digit[j], j);
+	j = (j+1)%4;
+}
+
+int main(void)
+{
+
+	init_PORT();
+    while(1)
+    {
+    	matrix_display_segment();
+    	//SEVSEG_putdigit(m_button, 0);
+    	//delayMs(500);
+
+    	//seven_segment_display();
+
+    	//*GPIOC_ODR &= ~(1 << 1);
+
+/*    	*GPIOC_ODR &= ~(1 << 1);
+    	*GPIOB_ODR |= 0x7F00;
+    	*GPIOB_ODR &= seven_seg[2];
+    	delay();
+
+    	*GPIOC_ODR &= ~(1 << 2);
+    	*GPIOB_ODR |= 0x7F00;
+    	*GPIOB_ODR &= seven_seg[3];
+    	delay();
+
+    	*GPIOC_ODR &= ~(1 << 3);
+    	*GPIOB_ODR |= 0x7F00;
+    	*GPIOB_ODR &= seven_seg[4];
+    	delay();*/
+    }
+
+    return 0;
+}
+
+void init_PORT()
+{
+    // 1. Enable the clock for GPIOD peripheral in the AHB1ENR
+    *RCC_AHB1ENR |= (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3); // SET 3th bit position as 1
+
+    *GPIOA_MODER |= (1 << 0) | (1 << 2) | (1 << 4) | (1 << 6);
+
+    *GPIOC_MODER |= (1 << 0) | (1 << 2) | (1 << 4) | (1 << 6);
+
+    *GPIOB_MODER |= 0x15550000;
+
+    // 2. Configure PD0, PD1, PD2, PD3 as OUTPUT (rows)
+
+    *GPIOD_MODER |= 0x5540;
+
+    // 3. Configure PD8, PD9, PD10, PD11 as INPUT (colunms)
+    //*GPIOD_MODER &= ~(1 << 10) | ~(1 << 12) | ~(1 << 14) | ~(1 << 16);
+    *GPIOD_MODER |= 0x5540;
+    *GPIOD_PUPD |= 0x15;
+
+}
+
+void keypad_scan()
+{
+	unsigned char num, bill;
+	*GPIOD_ODR = row;
+	delayMs(5);
+	bill = *GPIOD_IDR & 0x7F;
+	num = 0;
+	while(num < 12)
+	{
+		if(bill == matrix_keyboard[num])
+		{
+			while((*GPIOD_IDR & 0x7F) == matrix_keyboard[num]);
+			m_button = num;
+			break;
+		}
+		else
+		{
+			m_button = 12;
+			num++;
+		}
+	}
+	if(row == 0x38) row = 0x70;
+	else row = ((row << 1) + 0x08) & 0x7F;
+//	*GPIOD_ODR |= 0x0F;
+//	*GPIOD_ODR &= ~(1 << 0);
+//
+//	if((!(*GPIOD_IDR & (1<<9))))
+//	{
+//		delayMs(150);
+//	    count = 1;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<10))))
+//	{
+//		delayMs(150);
+//	    count = 2;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<11))))
+//	{
+//		delayMs(150);
+//	    count = 3;
+//	}
+//
+//	*GPIOD_ODR |= 0x0F;
+//	*GPIOD_ODR &= ~(1 << 1);
+//
+//	if((!(*GPIOD_IDR & (1<<9))))
+//	{
+//	    count = 4;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<10))))
+//	{
+//	    count = 5;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<11))))
+//	{
+//	    count = 6;
+//	}
+//
+//	*GPIOD_ODR |= 0x0F;
+//	*GPIOD_ODR &= ~(1 << 2);
+//
+//	if((!(*GPIOD_IDR & (1<<9))))
+//	{
+//	    count = 7;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<10))))
+//	{
+//	    count = 8;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<11))))
+//	{
+//	    count = 9;
+//	}
+//
+//	*GPIOD_ODR |= 0x0F;
+//	*GPIOD_ODR &= ~(1 << 3);
+//
+//	if((!(*GPIOD_IDR & (1<<9))))
+//	{
+//	    count = 10;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<10))))
+//	{
+//	    count = 0;
+//	}
+//
+//	if((!(*GPIOD_IDR & (1<<11))))
+//	{
+//	    count = 12;
+//	}
+}
+
+void matrix_display_segment()
+{
+	keypad_scan();
+	delayMs(1);
+	uint8_t i=1;
+	if(m_button <= 9)
+	{
+		i=3;
+
+		while(i)
+		{
+			digit[i] = digit[i-1];
+			i--;
+		}
+		digit[0] = m_button;
+
+	}
+
+	SEVSEG_putnumber_matrix();
+
+
+}
+
+
+

@@ -1,3 +1,0 @@
-// Swap elements in even positions to their adjacent odd positions in the Array
-// Given an array by user that need to be swapped like element at A[0] with A[1], A[2] with A[3], etc.
-

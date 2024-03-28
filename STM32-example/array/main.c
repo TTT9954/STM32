@@ -7,7 +7,11 @@ void swap(uint8_t *pArray1, uint8_t *pArray2, uint8_t size_Array1,  uint8_t size
 
 int main()
 {
-	uint8_t size_array1,size_array2;
+	uint8_t arr[4] = {1,2,3,4};
+
+	printf("Address of array: %p\n", &*(arr+0));
+	printf("Value of array:   %lld\n", &*(arr+1) - &arr[1]);
+	/*uint8_t size_array1,size_array2;
 
 	printf("Enter number of elements of 2 arrays: ");
 	scanf("%hhu %hhu", &size_array1, &size_array2);
@@ -30,7 +34,7 @@ int main()
 	printf("Elements of array 1: ");
 	array_display(a, size_array1);
 	printf("Elements of array 2: ");
-	array_display(b, size_array2);
+	array_display(b, size_array2);*/
 	return 0;
 }
 

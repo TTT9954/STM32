@@ -18,7 +18,7 @@
 
 #include <stdint.h>
 
-#define delay() for(uint32_t i=0; i<=300000; i++);
+#define delay() for(uint32_t i=0; i<=100000; i++);
 
 uint8_t ledState = 0;
 uint32_t volatile *const clk_en_reg = (uint32_t *)(0x40023800 + 0x30); // RCC memory mapped
@@ -46,18 +46,36 @@ int main(void)
     // configuring PA0 as INPUT mode
     *gpioA_mode &= ~(3 << 0);
 
-
-
+    uint8_t count = 0;
+    uint8_t last_state = (*gpioA_input & (1 << 0));
     while(1)
     {
     	// Read status GPIOA
-    	read_state = (uint8_t)(*gpioA_input & (1 << 0));
-    	if (read_state)
+    	read_state = *gpioA_input & (1 << 0);
+
+    	if (read_state != last_state)
     	{
-    		delay();
-    		while(read_state);
-    		delay();
-    		*gpioD_output ^= (1 << 12);
+
+    		//last_state = read_state;
+    		if (read_state == 1)
+    		{
+
+    			delay();
+    			while((*gpioA_input & (1 << 0)) == read_state)
+    			{
+    				delay();
+    				count++;
+    				if(count > 50)
+    				{
+    					*gpioD_output ^= (1 << 12);
+    					count = 0;
+    				}
+    			}
+    			count = 0;
+
+
+
+    		}
     	}
     	//else *gpioD_output &= ~(1 << 12);
     }

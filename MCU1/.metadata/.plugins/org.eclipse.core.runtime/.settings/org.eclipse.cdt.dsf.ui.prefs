@@ -1,2 +1,4 @@
+disassembly.showAddressRadix=true
 eclipse.preferences.version=1
+rulerContributions=org.eclipse.cdt.dsf.ui.disassemblyColumn.opcodes
 useAnnotationsPrefPage=true

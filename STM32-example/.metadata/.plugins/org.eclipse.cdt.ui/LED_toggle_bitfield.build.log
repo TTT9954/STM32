@@ -1,10 +1,48 @@
-11:04:36 **** Incremental Build of configuration Debug for project LED_toggle_bitfield ****
+22:02:19 **** Incremental Build of configuration Debug for project LED_toggle_bitfield ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:63:13: warning: unused variable 'read_state' [-Wunused-variable]
+   63 |     uint8_t read_state = 0;
+      |             ^~~~~~~~~~
+../Src/main.c:61:33: warning: unused variable 'pGPIOD_Output_data' [-Wunused-variable]
+   61 |     GPIOx_ODR_t volatile *const pGPIOD_Output_data =  GPIOD_ODR;
+      |                                 ^~~~~~~~~~~~~~~~~~
+../Src/main.c:60:34: warning: unused variable 'pGPIOD_PUPD' [-Wunused-variable]
+   60 |     GPIOx_PUPD_t volatile *const pGPIOD_PUPD = GPIOD_PUPDR;
+      |                                  ^~~~~~~~~~~
+../Src/main.c:59:33: warning: unused variable 'pGPIOD_Input' [-Wunused-variable]
+   59 |     GPIOx_IDR_t volatile *const pGPIOD_Input = GPIOD_IDR;
+      |                                 ^~~~~~~~~~~~
+../Src/main.c:55:34: warning: unused variable 'pGPIOC_PUPD' [-Wunused-variable]
+   55 |     GPIOx_PUPD_t volatile *const pGPIOC_PUPD = GPIOC_PUPDR;
+      |                                  ^~~~~~~~~~~
+../Src/main.c:54:33: warning: unused variable 'pGPIOC_Input' [-Wunused-variable]
+   54 |     GPIOx_IDR_t volatile *const pGPIOC_Input = GPIOC_IDR;
+      |                                 ^~~~~~~~~~~~
+../Src/main.c:51:33: warning: unused variable 'pGPIOA_Output_data' [-Wunused-variable]
+   51 |     GPIOx_ODR_t volatile *const pGPIOA_Output_data =  GPIOA_ODR;
+      |                                 ^~~~~~~~~~~~~~~~~~
+../Src/main.c:50:34: warning: unused variable 'pGPIOA_PUPD' [-Wunused-variable]
+   50 |     GPIOx_PUPD_t volatile *const pGPIOA_PUPD = GPIOA_PUPDR;
+      |                                  ^~~~~~~~~~~
+../Src/main.c:49:33: warning: unused variable 'pGPIOA_Input' [-Wunused-variable]
+   49 |     GPIOx_IDR_t volatile *const pGPIOA_Input = GPIOA_IDR;
+      |                                 ^~~~~~~~~~~~
+../Src/main.c:48:35: warning: unused variable 'pGPIOA_mode' [-Wunused-variable]
+   48 |     GPIOx_MODER_t volatile *const pGPIOA_mode = GPIOA_MODER;
+      |                                   ^~~~~~~~~~~
+arm-none-eabi-gcc -o "LED_toggle_bitfield.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\LED_toggle_bitfield\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_toggle_bitfield.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_toggle_bitfield.elf
+ 
 arm-none-eabi-size  LED_toggle_bitfield.elf 
+arm-none-eabi-objdump -h -S LED_toggle_bitfield.elf  > "LED_toggle_bitfield.list"
    text	   data	    bss	    dec	    hex	filename
-    892	      8	   1568	   2468	    9a4	LED_toggle_bitfield.elf
+    856	      8	   1568	   2432	    980	LED_toggle_bitfield.elf
 Finished building: default.size.stdout
  
+Finished building: LED_toggle_bitfield.list
+ 
 
-11:04:36 Build Finished. 0 errors, 0 warnings. (took 161ms)
+22:02:20 Build Finished. 0 errors, 10 warnings. (took 622ms)
 

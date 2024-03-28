@@ -18,40 +18,29 @@
 #include <stdio.h>
 #include <stdint.h>
 
-typedef uint32_t volatile __U32V;
 
 int main(void)
 {
-	__U32V *RCC_AHB1ENR = (__U32V *) 0x40023830;
-	__U32V *GPIOD_MODER = (__U32V *) 0x40020C00;
-	__U32V *GPIOD_ODR = (__U32V *) 0x40020C14;
+	uint32_t *RCC_AHB1ENR = (uint32_t *) 0x40023830;
 
-    // 1. Enable the clock for GPIOD peripheral in the AHB1ENR
-    *RCC_AHB1ENR = *RCC_AHB1ENR | (1<<3); // SET 3th bit position as 1
+	uint32_t *GPIOC_MODER = (uint32_t *) 0x40020800;
+	uint32_t *GPIOC_ODR = (uint32_t *) (0x40020800+0x14);
 
-    // 2. Set output mode for GPIOD in the  GPIOx_MODER
-    // a. Clear the 24th bit positions
-    *GPIOD_MODER &= ~(3 << 24);
-    // b. Set 24th bit position as 1 (SET)
-    *GPIOD_MODER |= (1 << 24);
+	// 1. Enable the clock for GPIOD peripheral in the AHB1ENR
+	    *RCC_AHB1ENR |= (1<<2); // SET 3th bit position as 1
 
-    // 3. Write 1 to 12th bit position (pin 12)
+	    // 2. Set output mode for GPIOD in the  GPIOx_MODER
+	    // a. Clear the 24th bit positions
+	    *GPIOC_MODER &= ~(1 << 8);
+	    // b. Set 24th bit position as 1 (SET)
+	    *GPIOC_MODER |= (1 << 8);
 
-    while(1)
-    {
+	    // 3. Write 1 to 12th bit position (pin 12)
 
-
-    	for(int i = 0; i < 100000; i++)
-    	{
-    		*GPIOD_ODR |= (1 << 12);
-    	}
-
-
-    	for(int i = 0; i < 100000; i++)
-    	{
-    		*GPIOD_ODR &= ~(1 << 12);
-    	}
-    }
+	    while(1)
+	    {
+	    	*GPIOC_ODR |= (1 << 4);
+	    }
 
     return 0;
 }

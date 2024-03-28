@@ -1,4 +1,203 @@
-00:23:24 **** Incremental Build of configuration Debug for project array_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o array_2.exe main.o 
+01:45:16 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+01:45:25 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-size  pin_Read.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+01:48:04 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-size  pin_Read.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+01:49:11 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:00:03 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    856	      8	   1568	   2432	    980	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:05:03 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    856	      8	   1568	   2432	    980	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:05:26 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:06:00 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:06:39 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:08:36 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    856	      8	   1568	   2432	    980	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:10:39 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    812	      8	   1568	   2388	    954	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:11:05 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    816	      8	   1568	   2392	    958	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:12:10 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    816	      8	   1568	   2392	    958	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:12:23 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-size  pin_Read.elf 
+   text	   data	    bss	    dec	    hex	filename
+    816	      8	   1568	   2392	    958	pin_Read.elf
+Finished building: default.size.stdout
+ 
+02:12:51 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 
+02:13:23 **** Incremental Build of configuration Debug for project pin_Read ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "pin_Read.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32-Udemy\STM32-example\pin_Read\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pin_Read.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pin_Read.elf
+ 
+arm-none-eabi-size  pin_Read.elf 
+arm-none-eabi-objdump -h -S pin_Read.elf  > "pin_Read.list"
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	pin_Read.elf
+Finished building: default.size.stdout
+ 
+Finished building: pin_Read.list
+ 

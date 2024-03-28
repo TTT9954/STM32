@@ -17,36 +17,76 @@
  */
 
 #include <stdint.h>
+#include <stdio.h>
 #include "main.h"
+
+#define RCC_AHB1ENR (RCC_AHB1ENR_t*)(0x40023800 + 0x30)
+
+#define GPIOA_MODER (GPIOx_MODER_t *)0x40020000
+#define GPIOA_IDR (GPIOx_IDR_t *)(0x40020000 + 0x10)
+#define GPIOA_PUPDR (GPIOx_PUPD_t *)(0x40020000 + 0x0C)
+#define GPIOA_ODR (GPIOx_ODR_t *)(0x40020000 + 0x14)
+
+#define GPIOC_MODER (GPIOx_MODER_t *)0x40020800
+#define GPIOC_IDR (GPIOx_IDR_t *)(0x40020800 + 0x10)
+#define GPIOC_PUPDR (GPIOx_PUPD_t *)(0x40020800 + 0x0C)
+#define GPIOC_ODR (GPIOx_ODR_t *)(0x40020800 + 0x14)
+
+#define GPIOD_MODER (GPIOx_MODER_t *)0x40020C00
+#define GPIOD_IDR (GPIOx_IDR_t *)(0x40020C00 + 0x10)
+#define GPIOD_PUPDR (GPIOx_PUPD_t *)(0x40020C00 + 0x0C)
+#define GPIOD_ODR (GPIOx_ODR_t *)(0x40020C00 + 0x14)
+
+
 
 
 int main(void)
 {
 
-    RCC_AHB1ENR_t volatile *const pClk_enable = (RCC_AHB1ENR_t *)(0x40023800 + 0x30);
-    GPIOx_MODER_t volatile *const pGPIO_mode = (GPIOx_MODER_t *)(0x40020C00);
-    GPIOx_ODR_t volatile *const pOutput_data = (GPIOx_ODR_t *)(0x40020C00+0x14);
+    RCC_AHB1ENR_t volatile *const pClk_enable = RCC_AHB1ENR;
 
-    // Enable clock on GPIOD;
+    GPIOx_MODER_t volatile *const pGPIOA_mode = GPIOA_MODER;
+    GPIOx_IDR_t volatile *const pGPIOA_Input = GPIOA_IDR;
+    GPIOx_PUPD_t volatile *const pGPIOA_PUPD = GPIOA_PUPDR;
+    GPIOx_ODR_t volatile *const pGPIOA_Output_data =  GPIOA_ODR;
 
+    GPIOx_MODER_t volatile *const pGPIOC_mode = GPIOC_MODER;
+    GPIOx_IDR_t volatile *const pGPIOC_Input = GPIOC_IDR;
+    GPIOx_PUPD_t volatile *const pGPIOC_PUPD = GPIOC_PUPDR;
+    GPIOx_ODR_t volatile *const pGPIOC_Output_data =  GPIOC_ODR;
+
+    GPIOx_MODER_t volatile *const pGPIOD_mode = GPIOD_MODER;
+    GPIOx_IDR_t volatile *const pGPIOD_Input = GPIOD_IDR;
+    GPIOx_PUPD_t volatile *const pGPIOD_PUPD = GPIOD_PUPDR;
+    GPIOx_ODR_t volatile *const pGPIOD_Output_data =  GPIOD_ODR;
+
+    uint8_t read_state = 0;
+    // Enable clock on GPIOC;
+    pClk_enable->gpioc_en = 1;
+    pClk_enable->gpioa_en = 1;
     pClk_enable->gpiod_en = 1;
 
     // Set GPIOD with output mode
-    pGPIO_mode->pin_12 = 0;
+    /*pGPIO_mode->pin_12 = 0;
     pGPIO_mode->pin_13 = 0;
     pGPIO_mode->pin_14 = 0;
     pGPIO_mode->pin_15 = 0;
     pGPIO_mode->pin_12 = 1;
     pGPIO_mode->pin_13 = 1;
     pGPIO_mode->pin_14 = 1;
-    pGPIO_mode->pin_15 = 1;
+    pGPIO_mode->pin_15 = 1;*/
+
+    // Set GPIOC with output mode
+    pGPIOC_mode->pin_4 = 1;
+    pGPIOD_mode->pin_12 = 1;
 
 
 
 
     while(1)
     {
-    	// Write 1 to GPIOD to turn on LED
+    	pGPIOC_Output_data->pin_4 ^= 1;
+    	/*// Write 1 to GPIOD to turn on LED
     	pOutput_data->pin_12 = 1;
     	pOutput_data->pin_13 = 1;
     	pOutput_data->pin_14 = 1;
@@ -56,8 +96,11 @@ int main(void)
     	pOutput_data->pin_12 = 0;
     	pOutput_data->pin_13 = 0;
     	pOutput_data->pin_14 = 0;
-    	pOutput_data->pin_15 = 0;
-    	delay();
+    	pOutput_data->pin_15 = 0;*/
+
+ //   	pGPIOC_Output_data->pin_4 ^= 1;
+   	    delay();
+
     }
     return 0;
 }

@@ -1,0 +1,13 @@
+#include <stdint.h>
+
+#define RCC_BASE_ADDRESS 0x40023800
+#define RCC_CFGR_OFFSET 0x08
+#define RCC_CFGR (RCC_BASE_ADDRESS + RCC_CFGR_OFFSET)
+
+int main(void)
+{
+    uint32_t *pRccConfiguration = (uint32_t *) RCC_CFGR;
+
+    *pRccConfiguration |= (0 << 21);
+	for(;;);
+}

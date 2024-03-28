@@ -1,7 +1,7 @@
-23:14:33 **** Incremental Build of configuration Debug for project array ****
+17:07:05 **** Incremental Build of configuration Debug for project array ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
 gcc -o array.exe main.o 
 
-23:14:34 Build Finished. 0 errors, 0 warnings. (took 438ms)
+17:07:05 Build Finished. 0 errors, 0 warnings. (took 396ms)
 
