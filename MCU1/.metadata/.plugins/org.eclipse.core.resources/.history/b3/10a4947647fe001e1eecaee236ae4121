@@ -1,0 +1,35 @@
+#include "SPI.h"
+
+extern __IO uint32_t *GPIOA_MODER 		=  (uint32_t *)GPIOA_BASEADDR;
+extern __IO uint32_t *GPIOA_OTYPER 	=  (uint32_t *)(GPIOA_BASEADDR+0x04);
+extern __IO uint32_t *GPIOA_OSPEEDR 	=  (uint32_t *)(GPIOA_BASEADDR+0x08);
+extern __IO uint32_t *GPIOA_PUPDR 		=  (uint32_t *)(GPIOA_BASEADDR+0x0C);
+extern __IO uint32_t *GPIOA_AFRL 		=  (uint32_t *)(GPIOA_BASEADDR+0x2C);
+
+extern __IO uint32_t *GPIOB_MODER 		=  (uint32_t *)GPIOB_BASEADDR;
+extern __IO uint32_t *GPIOB_OTYPER 	=  (uint32_t *)(GPIOB_BASEADDR+0x04);
+extern __IO uint32_t *GPIOB_OSPEEDR 	=  (uint32_t *)(GPIOB_BASEADDR+0x08);
+extern __IO uint32_t *GPIOB_PUPDR 		=  (uint32_t *)(GPIOB_BASEADDR+0x0C);
+extern __IO uint32_t *GPIOB_AFRL 		=  (uint32_t *)(GPIOB_BASEADDR+0x2C);
+extern __IO uint32_t *GPIOB_ODR 		=  (uint32_t *)(GPIOB_BASEADDR+0x14);
+
+
+extern __IO uint32_t *GPIOD_MODER 		=  (uint32_t *)GPIOD_BASEADDR;
+extern __IO uint32_t *GPIOD_IDR 		=  (uint32_t *)(GPIOD_BASEADDR+0x10);
+extern __IO uint32_t *GPIOD_ODR 		=  (uint32_t *)(GPIOD_BASEADDR+0x14);
+
+extern __IO uint32_t *NVIC_ISER0		=  (uint32_t *)NVIC_ISER_BASEADDR;
+extern __IO uint32_t *NVIC_IPR1		    =  (uint32_t *)(NVIC_IPR_BASEADDR + 0x04);
+extern __IO uint32_t *SYSCFG_ITLINE5	=  (uint32_t *)(SYSCFG_BASEADDR + 0x94);
+
+extern __IO uint32_t *EXTI_FTSR1		=  (uint32_t *)(EXTI_BASEADDR + 0x004);
+extern __IO uint32_t *EXTI_EXTICRx     =  (uint32_t *)(EXTI_BASEADDR + 0x060);
+extern __IO uint32_t *EXTI_IMR1        =  (uint32_t *)(EXTI_BASEADDR + 0x080);
+extern __IO uint32_t *EXTI_FPR1        =  (uint32_t *)(EXTI_BASEADDR + 0x010);
+
+extern __IO uint32_t *SPI1_CR1   		=  (uint32_t *)SPI1_BASEADDR;
+extern __IO uint32_t *SPI1_CR2   		=  (uint32_t *)(SPI1_BASEADDR+0x04);
+extern __IO uint32_t *SPI1_SR   		=  (uint32_t *)(SPI1_BASEADDR+0x08);
+extern __IO uint32_t *SPI1_DR   		=  (uint32_t *)(SPI1_BASEADDR+0x0C);
+
+

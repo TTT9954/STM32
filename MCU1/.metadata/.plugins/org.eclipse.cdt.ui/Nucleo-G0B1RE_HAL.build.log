@@ -1,0 +1,21 @@
+14:55:01 **** Incremental Build of configuration Debug for project Nucleo-G0B1RE_HAL ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:71:17: warning: unused variable 'dummy_byte' [-Wunused-variable]
+   71 |         uint8_t dummy_byte = 0x0;
+      |                 ^~~~~~~~~~
+arm-none-eabi-gcc -o "Nucleo-G0B1RE_HAL.elf" @"objects.list"   -mcpu=cortex-m0plus -T"E:\STM32-Udemy\MCU1\Nucleo-G0B1RE_HAL\STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-G0B1RE_HAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-G0B1RE_HAL.elf
+ 
+arm-none-eabi-size  Nucleo-G0B1RE_HAL.elf 
+arm-none-eabi-objdump -h -S Nucleo-G0B1RE_HAL.elf  > "Nucleo-G0B1RE_HAL.list"
+   text	   data	    bss	    dec	    hex	filename
+   9420	     20	   1668	  11108	   2b64	Nucleo-G0B1RE_HAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-G0B1RE_HAL.list
+ 
+
+14:55:02 Build Finished. 0 errors, 1 warnings. (took 1s.46ms)
+

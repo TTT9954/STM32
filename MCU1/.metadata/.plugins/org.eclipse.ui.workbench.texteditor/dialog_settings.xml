@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="Tx_Rx_SPI_1byte"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="true"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="transferSPI"/>
+			<item value="__HAL_SPI_ENABLE"/>
+			<item value="AHBPERIPH_BASE"/>
+			<item value="RCC_BASE"/>
+			<item value="__IO"/>
+			<item value="RCC_TypeDef"/>
+			<item value="PERIPH_BASE"/>
+			<item value="GPIO_pins"/>
+			<item value="SPI_1"/>
+			<item value="__"/>
+			<item value="tempreg"/>
+			<item value="EXTI9"/>
+			<item value="EXTI5"/>
+			<item value="EXTI5_IRQHandler"/>
+			<item value="EXTI0"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Tx_Rx_SPI_1byte"/>
+			<item value="SPI2"/>
+			<item value="SPI_CR1_"/>
+			<item value="SPI_CR1"/>
+			<item value="temp"/>
+			<item value="GPIOD_LED"/>
+			<item value="GPIO_PIN_NO_10"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1064"/>
+		<item key="DIALOG_Y_ORIGIN" value="269"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

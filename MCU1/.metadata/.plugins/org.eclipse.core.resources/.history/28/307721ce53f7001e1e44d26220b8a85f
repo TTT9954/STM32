@@ -1,0 +1,11 @@
+#include <stdint.h>
+#include "stm32f407xx_spi_driver.h"
+int main()
+{
+	SPIx_Handle_t SPI_1;
+	SPI_1.pSPIx = SPI1;
+	SPI_1.SPIx_Config.DeviceMode = SPI_MASTER_MODE;
+	SPI_1.SPIx_Config.BusConfig  = SPI_FULL_DUPLEX;
+	SPI_1.SPIx_Config.ClkSpeed	 = SPI_SPEED_PRESCALER_4;
+}
+

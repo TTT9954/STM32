@@ -1,0 +1,151 @@
+#include <stdint.h>
+#include <string.h>
+#include "stm32f407xx_gpio_driver.h"
+
+uint8_t button_state = 0;
+uint8_t button_last_state = 0;
+uint8_t button_count = 0;
+uint8_t count = 0;
+void GPIO_LED_CONFIG();
+void GPIO_BUTTON_CONFIG();
+void EXTI_IT_CONFIG();
+
+void delay(uint32_t time)
+{
+	for(int i = 0; i < time; i++);
+}
+
+void EXTI0_IRQHandler(void)
+{
+	button_count++;
+	GPIO_IRQHandle(GPIO_PIN_NO_0);
+}
+
+void EXTI9_5_IRQHandler(void)
+{
+	button_state = 2;
+	GPIO_IRQHandle(GPIO_PIN_NO_5);
+}
+
+int main()
+{
+
+	button_last_state = button_state;
+	GPIO_LED_CONFIG();
+	GPIO_BUTTON_CONFIG();
+	EXTI_IT_CONFIG();
+	uint8_t temp = 0;
+	while(1)
+	{
+		if((button_count == 1))
+		{
+			GPIO_WriteToOutputPin(GPIOD, 12|temp, SET);
+			delay(250000);
+			GPIO_WriteToOutputPin(GPIOD, 12|temp, RESET);
+			delay(250000);
+			temp=(temp << 1);
+			if(count == 3)
+			{
+				GPIO_WriteToOutputPin(GPIOD, 12, SET);
+				GPIO_WriteToOutputPin(GPIOD, 13, SET);
+				GPIO_WriteToOutputPin(GPIOD, 14, SET);
+				GPIO_WriteToOutputPin(GPIOD, 15, SET);
+				delay(250000);
+				count = 0;
+			}
+			else count++;
+
+		}
+		if(button_count == 2)
+		{
+			button_last_state = button_state;
+			if(button_count == 2)
+			{
+				temp = 0;
+				GPIO_WriteToTogglePin(GPIOD, GPIO_PIN_NO_12);
+				GPIO_WriteToTogglePin(GPIOD, GPIO_PIN_NO_13);
+				GPIO_WriteToTogglePin(GPIOD, GPIO_PIN_NO_14);
+				GPIO_WriteToTogglePin(GPIOD, GPIO_PIN_NO_15);
+				delay(100000);
+			}
+		}
+		if(button_count == 3)
+		{
+			GPIO_WriteToOutputPort(GPIOD, 0);
+			button_count = 0;
+		}
+
+		GPIO_IRQ_Config(IRQ_EXTI0, ENABLE);
+		GPIO_IRQ_Config(IRQ_EXTI5_9, ENABLE);
+	}
+
+	return 0;
+
+}
+void GPIO_LED_CONFIG()
+{
+	GPIO_Handle_t GPIO_LED;
+	memset(&GPIO_LED, 0, sizeof(GPIO_Handle_t));
+
+	GPIO_PeripheralClock_Init(GPIOD, ENABLE);
+		//LED pin configuration
+	GPIO_LED.GPIOx_Base_Addr = GPIOD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_12;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinMode = GPIO_OUTPUT_MODE;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_Init(&GPIO_LED);
+
+	GPIO_LED.GPIOx_Base_Addr = GPIOD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_13;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinMode = GPIO_OUTPUT_MODE;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_Init(&GPIO_LED);
+
+	GPIO_LED.GPIOx_Base_Addr = GPIOD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_14;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinMode = GPIO_OUTPUT_MODE;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_Init(&GPIO_LED);
+
+	GPIO_LED.GPIOx_Base_Addr = GPIOD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_15;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinMode = GPIO_OUTPUT_MODE;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_Init(&GPIO_LED);
+}
+
+void GPIO_BUTTON_CONFIG()
+{
+	GPIO_Handle_t GPIO_BUTTON;
+	memset(&GPIO_BUTTON, 0, sizeof(GPIO_Handle_t));
+
+	//BUTTON pin configuration
+	GPIO_BUTTON.GPIOx_Base_Addr = GPIOD;
+	GPIO_BUTTON.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_5;
+	GPIO_BUTTON.GPIO_Pin_Config.GPIO_PinMode = GPIO_IT_FT;
+	GPIO_BUTTON.GPIO_Pin_Config.GPIO_PinPuPdControl = GPIO_PU;
+	GPIO_Init(&GPIO_BUTTON);
+
+	GPIO_BUTTON.GPIOx_Base_Addr = GPIOA;
+	GPIO_BUTTON.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_0;
+	GPIO_BUTTON.GPIO_Pin_Config.GPIO_PinMode = GPIO_IT_RT;
+	GPIO_Init(&GPIO_BUTTON);
+}
+
+void EXTI_IT_CONFIG()
+{
+	GPIO_IRQPriority_Config(IRQ_EXTI0, 14);
+	GPIO_IRQ_Config(IRQ_EXTI0, ENABLE);
+
+	GPIO_IRQPriority_Config(IRQ_EXTI5_9, 15);
+	GPIO_IRQ_Config(IRQ_EXTI5_9, ENABLE);
+}
+
+
+
+
+

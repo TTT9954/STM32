@@ -1,0 +1,168 @@
+/*
+ * SPI.h
+ *
+ *  Created on: Apr 19, 2024
+ *      Author: TuTran
+ */
+
+#ifndef SPI_H_
+#define SPI_H_
+
+#include <stdint.h>
+
+#define     __IO    volatile             /*!< Defines 'read / write' permissions */
+
+#define PERIPH_BASE             (0x40000000UL)  /*!< Peripheral base address */
+#define AHBPERIPH_BASE          (PERIPH_BASE + 0x00020000UL)
+#define RCC_BASE                (AHBPERIPH_BASE + 0x00001000UL)
+
+#define GPIOA_BASEADDR			0x50000000
+#define GPIOB_BASEADDR			0x50000400
+#define GPIOC_BASEADDR			0x50000800
+#define GPIOD_BASEADDR			0x50000C00
+
+#define RCC_IOPORT				(uint32_t *)(RCC_BASE+0x34)
+#define RCC_APBENR2				(uint32_t *)(RCC_BASE+0x40)
+#define SPI1_BASEADDR			0x40013000
+
+#define NVIC_ISER_BASEADDR		0xE000E100
+#define NVIC_IPR_BASEADDR		0xE000E400
+#define EXTI_BASEADDR			0x40021800
+#define SYSCFG_BASEADDR			0x40010000
+
+
+#define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+#define READ_BIT(REG, BIT)    ((REG) & (BIT))
+
+#if !defined(UNUSED)
+#define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
+#endif /* UNUSED */
+
+#define RCC_IOPENR_GPIOAEN_Pos           (0U)
+#define RCC_IOPENR_GPIOAEN_Msk           (0x1UL << RCC_IOPENR_GPIOAEN_Pos)      /*!< 0x00000001 */
+#define RCC_IOPENR_GPIOAEN               RCC_IOPENR_GPIOAEN_Msk
+
+#define RCC_IOPENR_GPIOBEN_Pos           (1U)
+#define RCC_IOPENR_GPIOBEN_Msk           (0x1UL << RCC_IOPENR_GPIOBEN_Pos)      /*!< 0x00000001 */
+#define RCC_IOPENR_GPIOBEN               RCC_IOPENR_GPIOBEN_Msk
+
+#define RCC_IOPENR_GPIOCEN_Pos           (2U)
+#define RCC_IOPENR_GPIOCEN_Msk           (0x1UL << RCC_IOPENR_GPIOCEN_Pos)      /*!< 0x00000001 */
+#define RCC_IOPENR_GPIOCEN               RCC_IOPENR_GPIOCEN_Msk
+
+#define RCC_IOPENR_GPIODEN_Pos           (3U)
+#define RCC_IOPENR_GPIODEN_Msk           (0x1UL << RCC_IOPENR_GPIODEN_Pos)      /*!< 0x00000001 */
+#define RCC_IOPENR_GPIODEN               RCC_IOPENR_GPIODEN_Msk
+
+#define RCC_APBENR2_SYSCFGEN_Pos		 (0U)
+#define RCC_APBENR2_SYSCFGEN_Msk		 (0x1UL << RCC_APBENR2_SYSCFGEN_Pos)
+#define RCC_APBENR2_SYSCFGEN              RCC_APBENR2_SYSCFGEN_Msk
+
+#define RCC_APBENR2_SPI1EN_Pos		 	 (12U)
+#define RCC_APBENR2_SPI1EN_Msk			 (0x1UL << RCC_APBENR2_SPI1EN_Pos)
+#define RCC_APBENR2_SPI1EN               RCC_APBENR2_SPI1EN_Msk
+
+#define __HAL_RCC_GPIOA_CLK_ENABLE()           do { \
+                                                    SET_BIT((*(RCC_IOPORT)), RCC_IOPENR_GPIOAEN); \
+   /* Delay after an RCC peripheral clock enabling */ \
+                                                  } while(0U)
+
+#define __HAL_RCC_GPIOB_CLK_ENABLE()           do { \
+                                                    SET_BIT((*(RCC_IOPORT)), RCC_IOPENR_GPIOBEN); \
+   /* Delay after an RCC peripheral clock enabling */ \
+                                                  } while(0U)
+
+#define __HAL_RCC_GPIOD_CLK_ENABLE()           do { \
+                                                    SET_BIT((*(RCC_IOPORT)), RCC_IOPENR_GPIODEN); \
+   /* Delay after an RCC peripheral clock enabling */ \
+                                                  } while(0U)
+
+#define __HAL_RCC_SYSCFG_CLK_ENABLE()           do { \
+                                                    SET_BIT((*(RCC_APBENR2)), RCC_APBENR2_SYSCFGEN); \
+   /* Delay after an RCC peripheral clock enabling */ \
+                                                  } while(0U)
+
+#define __HAL_RCC_SPI1_CLK_ENABLE()           do { \
+                                                    SET_BIT((*(RCC_APBENR2)), RCC_APBENR2_SPI1EN); \
+   /* Delay after an RCC peripheral clock enabling */ \
+                                                  } while(0U)
+
+#define SPI_RXNE					0
+#define SPI_TXE						1
+#define SPI_BSY						7
+#define SPI_FTLVL					11
+#define ENABLE						1
+#define DISABLE						0
+#define SSM_HARDWARE				0
+#define SSM_SOFTWARE				1
+#define __8BIT__					7
+#define __16BIT__					15
+#define FTLVL						1 // FIFO transmission level
+#define	SPI_Flag(REG,BIT)			(REG & (1 << BIT))
+
+#define CMD_LED_CTRL		0x50
+#define CMD_SENSOR_READ		0x51
+#define CMD_LED_READ		0x52
+#define CMD_PRINT			0x53
+#define CMD_ID_READ			0x54
+
+#define LED_ON				1
+#define LED_OFF				0
+
+#define	ANALOG_PIN0			0
+#define	ANALOG_PIN1			1
+#define	ANALOG_PIN2			2
+#define	ANALOG_PIN3			3
+#define	ANALOG_PIN4			4
+
+#define LED_PIN				9
+
+void SPI_GPIO_Config();
+void SPI1_Init();
+void SPI1_Transmit(uint8_t *TxBuffer, uint32_t size);
+void SPI1_Receive(uint8_t *RxBuffer, uint32_t size);
+void SPI1_Enable_Disable(uint8_t value);
+void SPI_SS_Configure(uint8_t SSM_value);
+uint8_t Get_ACK_cmd(uint8_t ackbyte);
+uint8_t Tx_Rx_SPI_1byte(uint8_t tx_data);
+void Tx_Rx_SPI_bytes(uint8_t *tx_data, uint8_t *rx_data, uint8_t size_tx, uint8_t size_rx);
+
+void LED_GPIO_Init();
+void LED_TOGGLE();
+void Button_GPIO_Init();
+uint8_t button_state();
+
+void NVIC_Init();
+void EXTI_Init();
+
+extern __IO uint32_t *GPIOA_MODER;
+extern __IO uint32_t *GPIOA_OTYPER;
+extern __IO uint32_t *GPIOA_OSPEEDR;
+extern __IO uint32_t *GPIOA_AFRL;
+
+extern __IO uint32_t *GPIOB_MODER;
+extern __IO uint32_t *GPIOB_OTYPER;
+extern __IO uint32_t *GPIOB_OSPEEDR;
+extern __IO uint32_t *GPIOB_PUPDR;
+extern __IO uint32_t *GPIOB_AFRL;
+extern __IO uint32_t *GPIOB_ODR;
+
+extern __IO uint32_t *GPIOD_MODER;
+extern __IO uint32_t *GPIOD_IDR;
+extern __IO uint32_t *GPIOD_ODR;
+
+extern __IO uint32_t *NVIC_ISER0;
+extern __IO uint32_t *NVIC_IPR;
+extern __IO uint32_t *SYSCFG_ITLINE5;
+
+extern __IO uint32_t *EXTI_FTSR1;
+extern __IO uint32_t *EXTI_EXTICRx;
+extern __IO uint32_t *EXTI_IMR1;
+extern __IO uint32_t *EXTI_FPR1;
+
+extern __IO uint32_t *SPI1_CR1;
+extern __IO uint32_t *SPI1_CR2;
+extern __IO uint32_t *SPI1_SR;
+extern __IO uint32_t *SPI1_DR;
+
+#endif /* SPI_H_ */

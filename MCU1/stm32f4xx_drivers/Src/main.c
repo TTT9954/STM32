@@ -46,14 +46,9 @@ int main(void)
 		button_state = GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0);
 		if(button_state)
 		{
-			GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12, SET);
-			GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13, SET);
+			GPIO_WriteToOutputPin(GPIOD, 12, SET);
 		}
-		else
-		{
-			GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12, RESET);
-			GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13, RESET);
-		}
+		else GPIO_WriteToOutputPin(GPIOD, 12, 0);
 	}
 
 }

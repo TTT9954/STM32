@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;stm32f4xx_drivers/Src/SPI.c&apos; to &apos;SPI_1.c&apos;" description="Rename resource &apos;SPI.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/SPI.c" name="SPI_1.c" stamp="1713629648933" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;stm32f4xx_drivers/Src/SPI_2&apos; to &apos;SPI_2.c&apos;" description="Rename resource &apos;SPI_2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/SPI_2" name="SPI_2.c" stamp="1713629668868" updateReferences="true"/>
+</session>

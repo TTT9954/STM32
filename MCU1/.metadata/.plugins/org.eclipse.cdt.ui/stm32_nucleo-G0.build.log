@@ -1,0 +1,25 @@
+11:45:58 **** Incremental Build of configuration Debug for project stm32_nucleo-G0 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32G0 -DNUCLEO_G0B1RE -DSTM32G0B1RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'SPI1_Transmit':
+../Src/main.c:405:17: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  405 |         uint8_t temp = *((__IO uint8_t *)SPI1_DR);
+      |                 ^~~~
+../Src/main.c: In function 'Tx_Rx_SPI_bytes':
+../Src/main.c:465:25: warning: unused variable 'temp' [-Wunused-variable]
+  465 |                 uint8_t temp = *(__IO uint8_t *)SPI1_DR;
+      |                         ^~~~
+arm-none-eabi-gcc -o "stm32_nucleo-G0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"E:\STM32-Udemy\MCU1\stm32_nucleo-G0\STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32_nucleo-G0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32_nucleo-G0.elf
+ 
+arm-none-eabi-size  stm32_nucleo-G0.elf 
+arm-none-eabi-objdump -h -S stm32_nucleo-G0.elf  > "stm32_nucleo-G0.list"
+   text	   data	    bss	    dec	    hex	filename
+   1432	     60	   1572	   3064	    bf8	stm32_nucleo-G0.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32_nucleo-G0.list
+ 
+
+11:45:59 Build Finished. 0 errors, 2 warnings. (took 774ms)
+

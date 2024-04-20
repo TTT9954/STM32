@@ -1,0 +1,146 @@
+#ifndef INC_STM32F407XX_SPI_DRIVER_H_
+#define INC_STM32F407XX_SPI_DRIVER_H_
+
+#include "stm32f407xx.h"
+
+/*
+ * Configuration structure SPI device
+ */
+typedef struct
+{
+	uint8_t DeviceMode;
+	uint8_t BusConfig;
+	uint8_t ClkSpeed;
+	uint8_t DFF;
+	uint8_t CPOL;
+	uint8_t CPHA;
+	uint8_t SS;
+} SPI_Config_t;
+
+/*
+ * Handle structure for SPIx
+ */
+typedef struct
+{
+	SPI_RegDef_t *pSPIx;
+	SPI_Config_t SPIx_Config;
+	uint8_t 	 *TxBuffer; /* To store data for transmitting */
+	uint8_t 	 *RxBuffer; /* To store data for receiving */
+	uint32_t 	 TxLength; /* To store length of data transmitted */
+	uint32_t 	 RxLength; /* To store length of data received*/
+	uint8_t 	 TxState;  /* To store Tx state */
+	uint8_t 	 RxState;  /* To store Rx state */
+} SPIx_Handle_t;
+
+
+#define SPI_READY					0
+#define SPI_BUSY_RX					1
+#define SPI_BUSY_TX					2
+
+#define SPI_TX_EVENT_COMPLETE		1
+#define SPI_RX_EVENT_COMPLETE		2
+#define SPI_OVR_ERROR				3
+/*
+ * @SPI_DeviceMode
+ */
+#define SPI_MASTER_MODE				1
+#define SPI_SLAVE_MODE				0
+
+/*
+ * @SPI_DeviceMode
+ */
+#define SPI_FULL_DUPLEX				1
+#define SPI_HALF_DUPLEX				2
+#define SPI_SIMPLEX_RXONLY			3
+
+/*
+ * @SPI_DeviceMode
+ */
+#define SPI_SPEED_PRESCALER_2		0 // 16Mhz / 2 = 8Mhz
+#define SPI_SPEED_PRESCALER_4		1
+#define SPI_SPEED_PRESCALER_8		2
+#define SPI_SPEED_PRESCALER_16		3
+#define SPI_SPEED_PRESCALER_32		4
+#define SPI_SPEED_PRESCALER_64		5
+#define SPI_SPEED_PRESCALER_128		6
+#define SPI_SPEED_PRESCALER_256		7
+
+/*
+ * @SPI_DeviceMode
+ */
+#define DFF_8BIT					0
+#define DFF_16BIT					1
+
+/*
+ * @SPI_DeviceMode
+ */
+#define CPOL_LOW_IDLE				0
+#define CPOL_HIGH_IDLE				1
+
+/*
+ * @SPI_DeviceMode
+ */
+#define CPHA_FIRST_EGDE_CAP			0
+#define CPHA_SECOND_EGDE_CAP		1
+
+/*
+ * @SPI_DeviceMode
+ */
+#define SSM_HARDWARE				0
+#define SSM_SOFTWARE				1
+
+/*
+ * @SPI_DeviceMode
+ */
+#define SPI_ENABLE					1
+#define SPI_DISABLE					0
+
+/* SPI peripheral clock initialization (enable or disable) */
+void SPI_PeripheralClock_Init(SPI_RegDef_t *SPIx, uint8_t EnOrDis);
+
+/* SPI initialization and de-initialization */
+void SPI_Init(SPIx_Handle_t *SPIx);
+
+void SPI_Deinit(SPIx_Handle_t *SPIx, uint8_t EnOrDis);
+
+/* Transmitting and Receiving data */
+uint8_t GetFlag_state(SPI_RegDef_t *SPIx, uint8_t flag);
+
+void SPI_Transmit(SPI_RegDef_t *SPIx, uint8_t *TxBuffer, uint32_t size);
+
+void SPI_Receive(SPI_RegDef_t *SPIx, uint8_t *RxBuffer, uint32_t size);
+
+uint8_t SPI_TransmitReceive(SPI_RegDef_t *SPIx, uint8_t Tx_data);
+
+
+/* SPI interrupt */
+void SPI_IRQ_Config(uint8_t IRQNumber, uint8_t EnOrDis);
+
+void SPI_IRQPriority_Config(uint8_t IRQNumber, uint32_t IRQPriority);
+
+uint8_t SPI_Transmit_IT(SPIx_Handle_t *SPIx, uint8_t *TxBuffer, uint32_t size);
+
+uint8_t SPI_Receive_IT(SPIx_Handle_t *SPIx, uint8_t *RxBuffer, uint32_t size);
+
+void SPI_IRQHandle(SPIx_Handle_t *SPIx);
+
+void SPI_ClearOVRFlag(SPI_RegDef_t *SPIx);
+
+void SPI_CloseTransmission(SPIx_Handle_t *SPIx);
+
+void SPI_CloseReception(SPIx_Handle_t *SPIx);
+
+/*
+ * Applition function Callback
+ */
+__weak void SPIEventCallback(SPIx_Handle_t *SPIx, uint8_t value);
+
+/* Other function APIs*/
+void SPI_SSI_Configure(SPI_RegDef_t *SPIx, uint8_t EnorDis);
+
+void SPI_SSOE(SPI_RegDef_t *SPIx, uint8_t EnorDis);
+
+void SPI_ACTIVE_DEACTIVE(SPI_RegDef_t *SPIx, uint8_t EnorDis);
+
+
+#endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

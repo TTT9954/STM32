@@ -54,9 +54,9 @@ typedef struct
 #define GPIO_OUTPUT_MODE 		1
 #define GPIO_ALTF_MODE 			2
 #define GPIO_ANALOG_MODE 		3
-#define GPIO_IT_FT				4
-#define GPIO_IT_RT				5
-#define GPIO_IT_RFT				6
+#define GPIO_IT_FT				4 // Interrupt falling trigger detection on corresponding pin
+#define GPIO_IT_RT				5 // Interrupt trigger detection on corresponding pin
+#define GPIO_IT_RFT				6 // Interrupt Falling and Rising detection on corresponding pin
 
 /*
  * * @GPIO_OUTPUT_TYPE
@@ -84,7 +84,7 @@ typedef struct
 
 /*
  * @GPIO_ALTF
- * The pull-up/pull-down of GPIO pin
+ * The Alternate functions of GPIO pin
  */
 #define GPIO_PIN_AF0			0
 #define GPIO_PIN_AF1			1
@@ -109,7 +109,7 @@ typedef struct
  * 						For more informations about the APIs check function definitions
  ***********************************************************************************************/
 /*
- * TODO: Peripherals Clock setup
+ * Peripherals Clock setup
  */
 void GPIO_PeripheralClock_Init(GPIO_RegDef_t *GPIOx, uint8_t EnOrDis);
 
@@ -119,23 +119,29 @@ void GPIO_Init(GPIO_Handle_t *GPIOx);
 void GPIO_Deinit(GPIO_RegDef_t *GPIOx, uint8_t EnOrDis);
 
 /*
- * TODO: Data READ/WRITE
+ * Data READ/WRITE
  */
 
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *GPIOx, uint8_t PinNumber);
 //uint8_t GPIO_ReadFromInputPin(GPIO_Handle_t *GPIOx);
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *GPIOx);
 
-void GPIO_WriteToOutputPin(GPIO_RegDef_t *GPIOx, uint8_t PinNumber, uint8_t Set_Reset);
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *GPIOx, uint8_t PinNumber, uint8_t state);
 
-void GPIO_WriteToOutputPort(GPIO_RegDef_t *GPIOx, uint8_t Set_Reset);
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *GPIOx, uint16_t value);
 
 void GPIO_WriteToTogglePin(GPIO_RegDef_t *GPIOx, uint8_t PinNumber);
 
 /*
  * TODO: IRQ Configuration and ISR handling
  */
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnOrDis);
+
+uint8_t GPIO_EXTI_PortCode(GPIO_RegDef_t *GPIOx);
+
+void GPIO_IRQ_Config(uint8_t IRQNumber, uint8_t EnOrDis);
+
+void GPIO_IRQPriority_Config(uint8_t IRQNumber, uint32_t IRQPriority);
+
 
 void GPIO_IRQHandle(uint8_t PinNumber);
 

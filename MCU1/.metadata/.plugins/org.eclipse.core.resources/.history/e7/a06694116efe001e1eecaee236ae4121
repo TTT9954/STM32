@@ -1,0 +1,336 @@
+#include <stdint.h>
+#include "stm32f407xx_spi_driver.h"
+#include "stm32f407xx_gpio_driver.h"
+#include <string.h>
+
+#define CMD_LED_CTRL		0x50
+#define CMD_SENSOR_READ		0x51
+#define CMD_LED_READ		0x52
+#define CMD_PRINT			0x53
+#define CMD_ID_READ			0x54
+
+#define LED_ON				1
+#define LED_OFF				0
+
+#define	ANALOG_PIN0			0
+#define	ANALOG_PIN1			1
+#define	ANALOG_PIN2			2
+#define	ANALOG_PIN3			3
+#define	ANALOG_PIN4			4
+
+#define LED_PIN				0
+
+void LED_GPIO_Init();
+void Button_GPIO_Init();
+uint8_t Button_State();
+void SPI1_GPIO_Init();
+void SPI2_GPIO_Init();
+void SPI1_Init();
+void SPI2_Init();
+void SPI_Transmit_Many_Packages(SPI_RegDef_t *SPIx, uint8_t *data, uint32_t length);
+uint8_t Get_ACK_cmd(uint8_t ackbyte);
+void SPI_Interrupt();
+
+
+void delay(int time)
+{
+	for(int i = 0; i <= time; i++);
+}
+
+int main()
+{
+
+    char data[] = "What is your name ?";
+	//char data2[] = "";
+	uint8_t led_ctrl[2] = {0x03, 0x01};
+
+	uint8_t sensor_read[2] = {0};
+
+	uint8_t data_received[] = {0};
+
+	uint8_t cmd_code = 0;
+
+	uint8_t ack_byte = 0;
+
+	uint8_t dummy_read = 0;
+
+	uint8_t data_length_receive = 0;
+
+	uint8_t data_length_Master = 0;
+
+	LED_GPIO_Init();
+	Button_GPIO_Init();
+	SPI1_GPIO_Init();
+	SPI2_GPIO_Init();
+
+	SPI1_Init();
+	SPI2_Init();
+
+	while(1)
+	{
+		while(!Button_State());
+
+		while(Button_State());
+
+		delay(100000);
+
+		SPI_ACTIVE_DEACTIVE(SPI1, ENABLE);
+
+		cmd_code = 0x50;
+
+		SPI_Transmit(SPI1, &cmd_code, 1);
+
+		SPI_Receive(SPI1, &ack_byte, 1);
+
+		if(Get_ACK_cmd(ack_byte))
+		{
+			SPI_Transmit(SPI1, led_ctrl, 2);
+		}
+
+		while(!Button_State());
+
+		while(Button_State());
+
+		delay(100000);
+
+		cmd_code = 0x51;
+
+		SPI_Transmit(SPI1, &cmd_code, 1);
+
+		SPI_Receive(SPI1, &ack_byte, 1);
+
+		if(Get_ACK_cmd(ack_byte))
+		{
+			SPI_Receive(SPI1, data_received, 2);
+
+			GPIO_WriteToTogglePin(GPIOD, data_received[0]);
+		}
+
+		while(!Button_State());
+
+		while(Button_State());
+
+		delay(100000);
+
+		cmd_code = 0x52;
+
+		SPI_Transmit(SPI1, &cmd_code, 1);
+
+		SPI_Receive(SPI1, &ack_byte, 1);
+
+		if(Get_ACK_cmd(ack_byte))
+		{
+			SPI_Receive(SPI1, data_received, 1);
+
+			GPIO_WriteToTogglePin(GPIOD, data_received[0]);
+		}
+
+		while(!Button_State());
+
+		while(Button_State());
+
+		delay(100000);
+
+		cmd_code = 0x53;
+
+		SPI_Transmit(SPI1, &cmd_code, 1);
+
+		SPI_Receive(SPI1, &ack_byte, 1);
+
+		if(Get_ACK_cmd(ack_byte))
+		{
+
+			for(uint8_t i = 0; i < 19; i++)
+			{
+				SPI_Receive(SPI1, &data_received, 1);
+
+			}
+		}
+
+		while(!Button_State());
+
+		while(Button_State());
+
+		delay(100000);
+
+		cmd_code = 0x54;
+
+		SPI_Transmit(SPI1, &cmd_code, 1);
+
+		SPI_Receive(SPI1, &ack_byte, 1);
+
+		if(Get_ACK_cmd(ack_byte))
+		{
+			data_length_Master = strlen(data);
+
+			SPI_Transmit(SPI1, &data_length_Master, 1);
+
+			SPI_Receive(SPI1, &dummy_read, 1);
+
+			for(uint8_t i = 0; i < 19; i++)
+			{
+				SPI_Transmit(SPI1, (uint8_t *)&data[i], 1);
+			}
+		}
+
+		SPI_ACTIVE_DEACTIVE(SPI1, DISABLE);
+	}
+
+	return 0;
+}
+
+void LED_GPIO_Init()
+{
+	GPIO_Handle_t GPIO_LED;
+
+	GPIO_LED.GPIOx_Base_Addr = GPIOD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinMode = GPIO_OUTPUT_MODE;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+	GPIO_LED.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_12;
+
+	GPIO_Init(&GPIO_LED);
+
+}
+void Button_GPIO_Init()
+{
+	GPIO_Handle_t GPIO_Button;
+
+	GPIO_Button.GPIOx_Base_Addr = GPIOA;
+
+	GPIO_Button.GPIO_Pin_Config.GPIO_PinMode = GPIO_INPUT_MODE;
+	GPIO_Button.GPIO_Pin_Config.GPIO_PinNumber = GPIO_PIN_NO_0;
+
+	GPIO_Init(&GPIO_Button);
+}
+
+uint8_t Button_State()
+{
+	return GPIO_ReadFromInputPin(GPIOA, 0);
+}
+
+void SPI1_GPIO_Init()
+{
+	GPIO_Handle_t GPIO_SPI1;
+
+	/* GPIO pin configure with SPI function */
+	GPIO_SPI1.GPIOx_Base_Addr = GPIOA;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinMode = GPIO_ALTF_MODE;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinAltFunc = GPIO_PIN_AF5;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+
+	// SCK
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinNumber = 5;
+	GPIO_Init(&GPIO_SPI1);
+
+	// MOSI pin
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinNumber = 7;
+	GPIO_Init(&GPIO_SPI1);
+
+	// MISO
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinNumber = 6;
+	GPIO_Init(&GPIO_SPI1);
+
+	// NSS pin
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinMode = GPIO_ALTF_MODE;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinAltFunc = GPIO_PIN_AF5;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+	GPIO_SPI1.GPIO_Pin_Config.GPIO_PinNumber = 4;
+	GPIO_Init(&GPIO_SPI1);
+}
+
+void SPI1_Init()
+{
+
+	SPIx_Handle_t SPI1_Config;
+	SPI1_Config.pSPIx = SPI1;
+	SPI1_Config.SPIx_Config.BusConfig 	= SPI_FULL_DUPLEX;
+	SPI1_Config.SPIx_Config.DeviceMode 	= SPI_MASTER_MODE;
+	SPI1_Config.SPIx_Config.ClkSpeed 	= SPI_SPEED_PRESCALER_4;
+	SPI1_Config.SPIx_Config.DFF			= DFF_8BIT;
+	SPI1_Config.SPIx_Config.CPOL		= CPOL_HIGH_IDLE;
+	SPI1_Config.SPIx_Config.CPHA		= CPHA_SECOND_EGDE_CAP;
+	SPI1_Config.SPIx_Config.SS			= SSM_HARDWARE;
+
+	SPI_PeripheralClock_Init(SPI1, ENABLE);
+
+	SPI_Init(&SPI1_Config);
+
+}
+
+void SPI2_GPIO_Init()
+{
+	// PB9, PB12: NSS, PB10: SCK, PB14: MISO, PB15: MOSI
+	GPIO_Handle_t GPIO_SPI2;
+
+	/* GPIO pin configure with SPI function */
+	GPIO_SPI2.GPIOx_Base_Addr = GPIOB;
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinMode = GPIO_ALTF_MODE;
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinAltFunc = GPIO_PIN_AF5;
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinSpeed = GPIO_HIGH_SPEED;
+
+	// NSS pin
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinNumber = 12;
+	GPIO_Init(&GPIO_SPI2);
+
+	// SCK
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinNumber = 10;
+	GPIO_Init(&GPIO_SPI2);
+
+	// MOSI pin
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinNumber = 15;
+	GPIO_Init(&GPIO_SPI2);
+
+	// MISO
+	GPIO_SPI2.GPIO_Pin_Config.GPIO_PinNumber = 14;
+	GPIO_Init(&GPIO_SPI2);
+}
+
+void SPI2_Init()
+{
+	SPI_PeripheralClock_Init(SPI2, ENABLE);
+
+	SPIx_Handle_t SPI2_Config;
+	SPI2_Config.pSPIx = SPI2;
+	SPI2_Config.SPIx_Config.BusConfig 	= SPI_FULL_DUPLEX;
+	SPI2_Config.SPIx_Config.DeviceMode 	= SPI_MASTER_MODE;
+	SPI2_Config.SPIx_Config.ClkSpeed 	= SPI_SPEED_PRESCALER_16;
+	SPI2_Config.SPIx_Config.DFF			= DFF_8BIT;
+	SPI2_Config.SPIx_Config.CPOL		= CPOL_LOW_IDLE;
+	SPI2_Config.SPIx_Config.CPHA		= CPHA_FIRST_EGDE_CAP;
+	SPI2_Config.SPIx_Config.SS			= SSM_HARDWARE;
+
+	SPI_Init(&SPI2_Config);
+
+}
+
+void SPI_Transmit_Many_Packages(SPI_RegDef_t *SPIx, uint8_t *data, uint32_t length)
+{
+	SPI_ACTIVE_DEACTIVE(SPIx, ENABLE);
+
+	SPI_Transmit(SPIx, data, length);
+
+	SPI_ACTIVE_DEACTIVE(SPIx, DISABLE);
+}
+
+uint8_t Get_ACK_cmd(uint8_t ackbyte)
+{
+	if(ackbyte == 0xF5)
+	{
+		return 1;
+	}
+	else return 0;
+}
+
+void SPI_Interrupt()
+{
+	SPI_IRQ_Config(IRQ_SPI2, ENABLE);
+	SPI_IRQPriority_Config(IRQ_SPI2, 15);
+}
+
+
+
